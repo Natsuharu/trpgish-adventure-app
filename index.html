@@ -8,9 +8,19 @@
     <title>Inventory-app</title>
   </head>
   <body>
-    <div class="contain">
-      <div class="shelf-left drawer"></div>
-      <div class="shelf-right drawer"></div>
+    <div
+      class="contain"
+      onclick="document.querySelector('.shelf-wrap').classList.toggle('inview');"
+    >
+      <div class="shelf-wrap">
+        <div class="shelf-left drawer">
+          <span class="open-shelf-left"></span>
+        </div>
+
+        <div class="shelf-right drawer">
+          <span class="open-shelf-right"></span>
+        </div>
+      </div>
     </div>
   </body>
 </html>

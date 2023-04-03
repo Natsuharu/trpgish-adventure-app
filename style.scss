@@ -23,3 +23,24 @@ $cBrown: #8c4848;
 
 .shelf-right {
 }
+
+.open-shelf-left {
+  display: inline-block;
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  border: solid;
+  opacity: 1;
+  transform: translateX(-67px) translateY(-3px);
+  background-color: beige;
+  transform: left;
+}
+
+.open-shelf-right {
+  display: inline-block;
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  border: solid;
+  opacity: 0;
+}
