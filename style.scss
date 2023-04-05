@@ -1,11 +1,19 @@
 @use "mixin" as *;
 $cBrown: #8c4848;
 $cBlack: black;
+$cGreen: #60e7ba;
+$cBlue: #0481a2;
+$cWhite: white;
 
-.shelf-wrap {
+body {
+  background-color: $cGreen;
+  margin: 0;
+}
+
+.wrap {
   letter-spacing: -5px;
   position: absolute;
-  top: 50%;
+  top: 18%;
   left: 50%;
   width: 133px;
   height: 105px;
@@ -38,6 +46,18 @@ $cBlack: black;
         transform: rotate3d(0, 1, 0, 126deg);
       }
     }
+    & .inventory-wrap {
+      & > div {
+        transition: all 1s;
+        transform: translateY(-150px);
+        opacity: 1;
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            transition-delay: $i * 0.1s;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -59,4 +79,115 @@ $cBlack: black;
   border: solid;
   background-color: $cBrown;
   z-index: 2;
+}
+
+//画面サイズで表示箇所変える
+.inventory {
+  background: $cWhite;
+  width: 245px;
+  height: 65px;
+  position: relative;
+  left: -310%;
+
+  margin: 10px;
+  border-radius: 10px;
+  border: 3px solid $cBlack;
+  opacity: 0;
+}
+
+.menu-wrap {
+  position: absolute;
+  // top: -170%;
+  // left: -295%;
+  top: 4%;
+  left: 43%;
+
+  &::before {
+    content: "";
+    width: 107%;
+    position: absolute;
+    top: 52px;
+    left: -5px;
+    height: 3px;
+    background: $cBlue;
+    transform-origin: left bottom;
+
+    @include animation(
+      $name: kf-menu-border,
+      $timing-function: cubic-bezier(0.38, -0.27, 0.05, 1.21)
+    );
+  }
+
+  & .menu {
+    padding: 10px 20px;
+    margin: 0 18px;
+    opacity: 1;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.5s;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px 0px $cBlack;
+
+    @include animation($name: furu);
+    &:hover {
+      box-shadow: none;
+      transform: translate(2px, 73px);
+    }
+  }
+
+  & .side-menu {
+    width: 400px;
+    height: 800px;
+    position: absolute;
+    left: auto;
+    transition: all 0.4s;
+    transform: rotateY(-90deg);
+    transform-origin: top right;
+    &.side1 {
+      background-color: rgba(191, 202, 50, 0.6);
+      transform: rotateY(0deg);
+      animation-timing-function: cubic-bezier(0.78, 0.37, 0, 1);
+    }
+  }
+}
+
+@keyframes kf-menu-border {
+  0% {
+    transform: scale(0, 5);
+  }
+}
+
+@keyframes furu {
+  0% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  2% {
+    transform: translate(2px, 2px) rotateZ(2deg);
+  }
+  4% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  6% {
+    transform: translate(2px, 0px) rotateZ(-2deg);
+  }
+  8% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  10% {
+    transform: translate(2px, 2px) rotateZ(2deg);
+  }
+  12% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  14% {
+    transform: translate(2px, 0px) rotateZ(-2deg);
+  }
+  16% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  18% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
 }
