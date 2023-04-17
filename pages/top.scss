@@ -65,6 +65,7 @@ body * {
     $timing-function: ease-in
   );
 }
+
 @keyframes shadow-animation {
   0%,
   100% {
@@ -72,7 +73,42 @@ body * {
     filter: blur(6px);
   }
   30% {
-    transform: translate(0%, 450%) scale(1.4, 1);
+    transform: translate(0%, 450%) scale(1.2, 1);
     filter: blur(8px);
+  }
+}
+
+.loading-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, 600%);
+
+  & .char {
+    display: inline-block;
+
+    @include animation(
+      $name: kf-animate-chars,
+      $iteration-count: infinite,
+      $delay: 2s,
+      $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+      $fill-mode: both
+    );
+
+    @for $i from 1 through 7 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.06s;
+      }
+    }
+  }
+}
+
+@keyframes kf-animate-chars {
+  0% {
+    transform: translateY(20%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
