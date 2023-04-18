@@ -1,4 +1,13 @@
-document.addEventListener("click", function () {
+const loading = document.querySelector(".container");
+window.addEventListener(
+  "animationend",
+  function () {
+    loading.classList.add("hide");
+  },
+  false
+);
+
+window.addEventListener("DOMContentLoaded", function () {
   const ta = new TextAnimation(".loading-animation");
 });
 

@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-body * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,6 +10,11 @@ body * {
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  &.hide {
+    transition: opacity 1s;
+    opacity: 0;
+  }
 }
 
 .ball {
@@ -20,16 +25,15 @@ body * {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 1;
   @include animation(
-    $name: bound,
+    $name: kf-bound,
     $iteration-count: infinite,
     $timing-function: ease-in
   );
 }
 
-@keyframes bound {
+@keyframes kf-bound {
   0%,
   100% {
     top: 50%;
@@ -56,17 +60,16 @@ body * {
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(0%, 450%);
   filter: blur(6px);
   z-index: 0;
   @include animation(
-    $name: shadow-animation,
+    $name: kf-shadow-animation,
     $iteration-count: infinite,
     $timing-function: ease-in
   );
 }
 
-@keyframes shadow-animation {
+@keyframes kf-shadow-animation {
   0%,
   100% {
     transform: translate(0%, 450%) scale(1);
@@ -82,13 +85,13 @@ body * {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(50%, 600%);
+  transform: translate(30%, 600%);
 
   & .char {
     display: inline-block;
 
     @include animation(
-      $name: kf-animate-chars,
+      $name: kf-chars-animate,
       $iteration-count: infinite,
       $delay: 2s,
       $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
@@ -103,12 +106,107 @@ body * {
   }
 }
 
-@keyframes kf-animate-chars {
+@keyframes kf-chars-animate {
   0% {
     transform: translateY(20%);
   }
 
   100% {
     transform: translateY(0);
+  }
+}
+
+.progress-bar {
+  width: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, 760%);
+  background-color: white;
+  border: 5px solid black;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate(-2%, -40%);
+  background-color: orange;
+  border-radius: 10px;
+
+  @include animation(
+    $name: kf-bar-animation,
+    $delay: 2s,
+    $duration: 5s,
+    $timing-function: cubic-bezier(1, -0.02, 0.18, 0.99),
+    $iteration-count: infinite
+  );
+}
+
+@keyframes kf-bar-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.triangle-animation {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100vh 100vw 0 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2;
+
+  &.top {
+    border-color: rgb(126, 89, 166) transparent transparent transparent;
+    @include animation(
+      $name: kf-triangle-animation-top,
+      $delay: 3s,
+      $duration: 1s,
+      $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
+      $direction: alternate-reverse
+    );
+  }
+
+  &.bottom {
+    border-color: transparent black transparent transparent;
+    @include animation(
+      $name: kf-triangle-animation-bottom,
+      $delay: 3s,
+      $duration: 1s,
+      $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
+      $direction: alternate-reverse
+    );
+  }
+}
+
+@keyframes kf-triangle-animation-bottom {
+  0% {
+    opacity: 1;
+    border-width: 100vh 100vw 0 0;
+  }
+  100% {
+    opacity: 0;
+    border-width: 100vh 100vw 0 100vw;
+  }
+}
+
+@keyframes kf-triangle-animation-top {
+  0% {
+    opacity: 1;
+    border-width: 100vh 100vw 0 0;
+  }
+
+  100% {
+    opacity: 0;
+    border-width: 100vh 100vw 100vh 0;
   }
 }
