@@ -4,11 +4,12 @@
   padding: 0;
 }
 
-.container {
+.wrap {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
+
 .container.hide {
   transition: opacity 1s;
   opacity: 0;
@@ -143,8 +144,9 @@
   transform: translate(-2%, -40%);
   background-color: orange;
   border-radius: 10px;
+  opacity: 0;
   animation-name: kf-bar-animation;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-timing-function: cubic-bezier(1, -0.02, 0.18, 0.99);
   animation-delay: 2s;
   animation-iteration-count: infinite;
@@ -154,9 +156,11 @@
 
 @keyframes kf-bar-animation {
   0% {
+    opacity: 1;
     width: 0%;
   }
   100% {
+    opacity: 1;
     width: 100%;
   }
 }
@@ -211,4 +215,75 @@
     opacity: 0;
     border-width: 100vh 100vw 100vh 0;
   }
-}/*# sourceMappingURL=top.css.map */
+}
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px 20px;
+  margin: 0 18px;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.5s;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0px 0px black;
+  background-color: white;
+}
+button:hover {
+  box-shadow: none;
+}
+button.start-btn {
+  transform: translate(-67%, 337px);
+}
+button.start-btn.hide {
+  opacity: 0;
+}
+
+.text-box {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: black;
+  width: 275px;
+  height: 65px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+.text-box.name {
+  transform: translate(-51%, 384px);
+}
+
+.character-img {
+  background-image: url(./image/character_yusha_01_red.png);
+  position: absolute;
+  height: 160px;
+  width: 150px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 145px);
+}
+
+.main-container {
+  opacity: 1;
+  position: absolute;
+  width: 100vw;
+}
+.main-container.inview {
+  transition: opacity 3s;
+  opacity: 1;
+}
+
+.back-img {
+  background-image: url(./image/forest-1920.jpg);
+  position: absolute;
+  height: 400px;
+  width: 700px;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 88px);
+}/*# sourceMappingURL=main.css.map */

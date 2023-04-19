@@ -1,8 +1,12 @@
 const loading = document.querySelector(".container");
+const loading_after = document.querySelector(".main-container");
+const start_btn = document.querySelector(".start-btn");
+
 window.addEventListener(
   "animationend",
   function () {
     loading.classList.add("hide");
+    loading_after.classList.add("inview");
   },
   false
 );
@@ -25,3 +29,7 @@ class TextAnimation {
     }, "");
   }
 }
+
+// document.addEventListener("click", function () {
+//   start - btn.classList.add("hide");
+// });

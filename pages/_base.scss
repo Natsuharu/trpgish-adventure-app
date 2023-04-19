@@ -1,0 +1,25 @@
+.main-container {
+  opacity: 1;
+  position: absolute;
+  // background-color: #24acac;
+  // padding: 20px;
+  // display: flex;
+  width: 100vw;
+
+  &.inview {
+    transition: opacity 3s;
+    opacity: 1;
+  }
+}
+
+.back-img {
+  background-image: url(./image/forest-1920.jpg);
+  position: absolute;
+  height: 400px;
+  width: 700px;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 88px);
+}
