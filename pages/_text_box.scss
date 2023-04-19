@@ -15,4 +15,13 @@
   &.name {
     transform: translate(-51%, 384px);
   }
+  & > p {
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    color: white;
+    text-align: center;
+  }
+  & .out {
+    transform: translate(10px, 0px);
+  }
 }
