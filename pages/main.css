@@ -253,6 +253,15 @@ button.start-btn.hide {
 .text-box.name {
   transform: translate(-51%, 384px);
 }
+.text-box > p {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: white;
+  text-align: center;
+}
+.text-box .out {
+  transform: translate(10px, 0px);
+}
 
 .character-img {
   background-image: url(./image/character_yusha_01_red.png);
@@ -267,12 +276,11 @@ button.start-btn.hide {
 }
 
 .main-container {
-  opacity: 1;
   position: absolute;
   width: 100vw;
 }
 .main-container.inview {
-  transition: opacity 3s;
+  transition: opacity 4s;
   opacity: 1;
 }
 
@@ -286,4 +294,9 @@ button.start-btn.hide {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 88px);
+  opacity: 0.8;
+}
+
+.main-container {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

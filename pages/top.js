@@ -19,7 +19,6 @@ class TextAnimation {
   constructor(el) {
     this.el = document.querySelector(el);
     this.chars = this.el.innerHTML.trim().split("");
-    // console.log(this.chars);
     this.el.innerHTML = this._splitText();
   }
 
@@ -27,6 +26,27 @@ class TextAnimation {
     return this.chars.reduce((acc, curr) => {
       return `${acc}<span class="char">${curr}</span>`;
     }, "");
+  }
+}
+
+let keyString = "";
+window.onkeydown = function (el) {
+  const na = new NameAnimation(el);
+};
+
+class NameAnimation {
+  constructor(el) {
+    let key = el.key;
+
+    if (el.keyCode === 8) {
+      keyString = keyString.slice(0, -1);
+      document.querySelector(".out").innerHTML = keyString;
+    } else if (el.keyCode === 0) {
+      event.preventDefault();
+    } else {
+      keyString += key;
+      document.querySelector(".out").innerHTML = keyString;
+    }
   }
 }
 
