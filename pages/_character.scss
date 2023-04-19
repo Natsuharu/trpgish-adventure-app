@@ -10,4 +10,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, 145px);
+
+  @include animation(
+    $name: kf-up-down,
+    $duration: 0.7s,
+    $timing-function: ease,
+    $iteration-count: infinite
+  );
+}
+
+@keyframes kf-up-down {
+  0%,
+  100% {
+    transform: translateY(-50%, 145px);
+  }
+  50% {
+    transform: translate(-50%, 135px);
+  }
 }

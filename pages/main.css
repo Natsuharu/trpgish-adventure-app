@@ -273,8 +273,23 @@ button.start-btn.hide {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 145px);
+  animation-name: kf-up-down;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 
+@keyframes kf-up-down {
+  0%, 100% {
+    transform: translateY(-50%, 145px);
+  }
+  50% {
+    transform: translate(-50%, 135px);
+  }
+}
 .main-container {
   position: absolute;
   width: 100vw;
