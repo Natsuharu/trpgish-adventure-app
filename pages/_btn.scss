@@ -1,0 +1,28 @@
+@use "variable" as *;
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  padding: 10px 20px;
+  margin: 0 18px;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.5s;
+  border-radius: 5px;
+
+  box-shadow: 2px 2px 0px 0px $cBlack;
+  background-color: $cWhite;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &.start-btn {
+    transform: translate(-67%, 337px);
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}

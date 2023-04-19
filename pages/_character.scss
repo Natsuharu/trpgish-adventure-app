@@ -1,0 +1,13 @@
+@use "../mixin" as *;
+
+.character-img {
+  background-image: url(./image/character_yusha_01_red.png);
+  position: absolute;
+  height: 160px;
+  width: 150px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 145px);
+}
