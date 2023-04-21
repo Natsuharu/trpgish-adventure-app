@@ -1,5 +1,6 @@
 const startBtn = document.querySelector(".start-btn");
 const statusBtn = document.querySelector(".status-btn");
+const img = document.querySelector("back-img2");
 
 window.addEventListener(
   "animationend",
@@ -20,7 +21,7 @@ class InviewClass {
 }
 
 class HideClass {
-  constructor(el) {
+  hide(el) {
     this.el = document.querySelectorAll(el);
     this.el.forEach(function (e) {
       e.classList.add("hide");
@@ -133,12 +134,22 @@ startBtn.addEventListener("click", function () {
   if (hero_name === "") {
     alert("名前を入力してください");
   } else {
-    const hc = new HideClass(".btn");
+    const hc = new HideClass();
+    hc.hide(".btn");
+    hc.hide(".out");
+
     const tf = new Transform();
     tf.transform(".text-box");
     tf.transform(".status-container");
     tf.transform(".character-img");
+
+    document.querySelector(".text").innerHTML = "モンスターがあらわれた！";
+    const ta = new TextAnimation(".text");
+
     tf.transform(".back-img");
+    tf.transform(".back-img2");
+
+    const ic = new InviewClass(".character-img2");
   }
 });
 
@@ -156,11 +167,3 @@ class Transform {
     });
   }
 }
-
-// window.addEventListener(
-//   "animationend",
-//   function () {
-
-//   },
-//   false
-// );
