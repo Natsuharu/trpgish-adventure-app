@@ -7,12 +7,12 @@ button {
 
   padding: 10px 20px;
   margin: 0 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DotGothic16", sans-serif;
 
   transition: all 0.5s;
   border-radius: 5px;
 
-  box-shadow: 2px 2px 0px 0px $cBlack;
+  box-shadow: 3px 3px 0px 0px $cBlack;
   background-color: $cWhite;
 
   &:hover {
@@ -21,8 +21,15 @@ button {
 
   &.start-btn {
     transform: translate(-67%, 337px);
+  }
 
+  &.status-btn {
+    transform: translate(-62%, -102px);
+  }
+
+  &.btn {
     &.hide {
+      transition: all 0.2s;
       opacity: 0;
     }
   }

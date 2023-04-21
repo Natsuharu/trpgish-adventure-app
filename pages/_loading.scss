@@ -142,10 +142,10 @@
 
   @include animation(
     $name: kf-bar-animation,
-    $delay: 2s,
-    $duration: 2s,
+    $delay: 1s,
+    $duration: 1s,
     $timing-function: cubic-bezier(1, -0.02, 0.18, 0.99),
-    $iteration-count: infinite
+    $iteration-count: normal
   );
 }
 
@@ -175,8 +175,8 @@
     border-color: $triangle_color_top transparent transparent transparent;
     @include animation(
       $name: kf-triangle-animation-top,
-      $delay: 3s,
-      $duration: 1s,
+      $delay: 2s,
+      $duration: 0.5s,
       $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
       $direction: alternate-reverse
     );
@@ -186,8 +186,8 @@
     border-color: transparent $cBlack transparent transparent;
     @include animation(
       $name: kf-triangle-animation-bottom,
-      $delay: 3s,
-      $duration: 1s,
+      $delay: 2s,
+      $duration: 0.5s,
       $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
       $direction: alternate-reverse
     );

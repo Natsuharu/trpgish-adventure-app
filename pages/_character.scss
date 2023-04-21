@@ -17,6 +17,14 @@
     $timing-function: ease,
     $iteration-count: infinite
   );
+
+  &.transform {
+    @include animation(
+      $name: kf-start-up-down,
+      $duration: 0.7s,
+      $timing-function: ease
+    );
+  }
 }
 
 @keyframes kf-up-down {
@@ -26,5 +34,14 @@
   }
   50% {
     transform: translate(-50%, 135px);
+  }
+}
+
+@keyframes kf-start-up-down {
+  0% {
+    transform: translateY(-50%, 145px);
+  }
+  100% {
+    transform: translate(-221%, 322px);
   }
 }

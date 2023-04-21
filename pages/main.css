@@ -146,10 +146,10 @@
   border-radius: 10px;
   opacity: 0;
   animation-name: kf-bar-animation;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(1, -0.02, 0.18, 0.99);
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-iteration-count: normal;
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
@@ -178,9 +178,9 @@
 .triangle-animation.top {
   border-color: rgb(126, 89, 166) transparent transparent transparent;
   animation-name: kf-triangle-animation-top;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.42, 0, 0.02, 1.01);
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
@@ -188,9 +188,9 @@
 .triangle-animation.bottom {
   border-color: transparent black transparent transparent;
   animation-name: kf-triangle-animation-bottom;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.42, 0, 0.02, 1.01);
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
@@ -222,10 +222,10 @@ button {
   left: 50%;
   padding: 10px 20px;
   margin: 0 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DotGothic16", sans-serif;
   transition: all 0.5s;
   border-radius: 5px;
-  box-shadow: 2px 2px 0px 0px black;
+  box-shadow: 3px 3px 0px 0px black;
   background-color: white;
 }
 button:hover {
@@ -234,7 +234,11 @@ button:hover {
 button.start-btn {
   transform: translate(-67%, 337px);
 }
-button.start-btn.hide {
+button.status-btn {
+  transform: translate(-62%, -102px);
+}
+button.btn.hide {
+  transition: all 0.2s;
   opacity: 0;
 }
 
@@ -254,13 +258,16 @@ button.start-btn.hide {
   transform: translate(-51%, 384px);
 }
 .text-box > p {
-  font-family: "Roboto", sans-serif;
-  font-size: large;
+  font-family: "DotGothic16", sans-serif;
   color: white;
   text-align: center;
 }
 .text-box .out {
   transform: translate(10px, 0px);
+}
+.text-box.transform {
+  transition: all 0.5s;
+  transform: translate(-51%, 495px);
 }
 
 .character-img {
@@ -281,6 +288,15 @@ button.start-btn.hide {
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
+.character-img.transform {
+  animation-name: kf-start-up-down;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
 
 @keyframes kf-up-down {
   0%, 100% {
@@ -290,6 +306,18 @@ button.start-btn.hide {
     transform: translate(-50%, 135px);
   }
 }
+@keyframes kf-start-up-down {
+  0% {
+    transform: translateY(-50%, 145px);
+  }
+  100% {
+    transform: translate(-221%, 322px);
+  }
+}
+body {
+  background-color: rgba(11, 11, 11, 0.27);
+}
+
 .main-container {
   position: absolute;
   width: 100vw;
@@ -299,17 +327,155 @@ button.start-btn.hide {
   opacity: 1;
 }
 
-.back-img {
+.img-wrap {
+  position: absolute;
+  height: 400px;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 88px);
+  overflow: hidden;
+}
+.img-wrap .back-img {
   background-image: url(./image/forest-1920.jpg);
   position: absolute;
   height: 400px;
   width: 700px;
   background-size: 700px;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 88px);
+  transform: translate(-50%, -200px);
   opacity: 0.8;
+}
+.img-wrap .back-img.transform {
+  animation-name: infinity-scroll-left;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+@keyframes infinity-scroll-left {
+  0% {
+    transform: translate(-50%, -200px);
+  }
+  100% {
+    transform: translate(-150%, -200px);
+  }
+}
+.status-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, 558px);
+  background-color: black;
+}
+.status-container.transform {
+  transition: all 0.5s;
+  transform: translate(-48%, 635px);
+}
+
+table {
+  border-collapse: collapse;
+  border: 3px solid white;
+  letter-spacing: 1px;
+  font-family: "DotGothic16", sans-serif;
+  color: white;
+}
+table th {
+  border: 3px solid white;
+  padding: 9px 20px;
+}
+table td {
+  border: 3px solid white;
+  padding: 20px;
+  text-align: center;
+}
+
+.tooltip {
+  width: 155px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+}
+.tooltip:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.tooltip.detail-str {
+  transform: translate(-263px, -111px);
+}
+.tooltip.detail-con {
+  transform: translate(-194px, -111px);
+}
+.tooltip.detail-siz {
+  transform: translate(-129px, -111px);
+}
+.tooltip.detail-dex {
+  transform: translate(-55px, -111px);
+}
+.tooltip.detail-app {
+  transform: translate(13px, -111px);
+}
+.tooltip.detail-int {
+  transform: translate(81px, -111px);
+}
+.tooltip.detail-pow {
+  transform: translate(153px, -111px);
+}
+.tooltip.detail-edu {
+  transform: translate(224px, -111px);
+}
+
+.titl-str:hover .detail-str {
+  display: block;
+}
+
+.titl-con:hover .detail-con {
+  display: block;
+}
+
+.titl-siz:hover .detail-siz {
+  display: block;
+}
+
+.titl-dex:hover .detail-dex {
+  display: block;
+}
+
+.titl-app:hover .detail-app {
+  display: block;
+}
+
+.titl-int:hover .detail-int {
+  display: block;
+}
+
+.titl-pow:hover .detail-pow {
+  display: block;
+}
+
+.titl-edu:hover .detail-edu {
+  display: block;
 }
 
 .main-container {

@@ -1,0 +1,150 @@
+@use "../mixin" as *;
+@use "variable" as *;
+
+.status-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, 558px);
+  background-color: black;
+
+  &.transform {
+    transition: all 0.5s;
+    transform: translate(-48%, 635px);
+  }
+}
+table {
+  border-collapse: collapse;
+  border: 3px solid $cWhite;
+  letter-spacing: 1px;
+  font-family: "DotGothic16", sans-serif;
+  color: $cWhite;
+
+  & th {
+    border: 3px solid $cWhite;
+    padding: 9px 20px;
+  }
+  & td {
+    border: 3px solid $cWhite;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.tooltip {
+  width: 155px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+
+  &:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: -19px;
+    margin-left: 10px;
+    border: solid transparent;
+    border-color: rgba(51, 204, 153, 0);
+    border-top-color: #33cc99;
+    border-width: 10px;
+    pointer-events: none;
+    content: " ";
+  }
+
+  &.detail-str {
+    transform: translate(-263px, -111px);
+  }
+
+  &.detail-con {
+    transform: translate(-194px, -111px);
+  }
+
+  &.detail-siz {
+    transform: translate(-129px, -111px);
+  }
+
+  &.detail-dex {
+    transform: translate(-55px, -111px);
+  }
+  &.detail-app {
+    transform: translate(13px, -111px);
+  }
+  &.detail-int {
+    transform: translate(81px, -111px);
+  }
+  &.detail-pow {
+    transform: translate(153px, -111px);
+  }
+  &.detail-edu {
+    transform: translate(224px, -111px);
+  }
+}
+
+.titl-str {
+  &:hover {
+    & .detail-str {
+      display: block;
+    }
+  }
+}
+
+.titl-con {
+  &:hover {
+    & .detail-con {
+      display: block;
+    }
+  }
+}
+
+.titl-siz {
+  &:hover {
+    & .detail-siz {
+      display: block;
+    }
+  }
+}
+
+.titl-dex {
+  &:hover {
+    & .detail-dex {
+      display: block;
+    }
+  }
+}
+
+.titl-app {
+  &:hover {
+    & .detail-app {
+      display: block;
+    }
+  }
+}
+
+.titl-int {
+  &:hover {
+    & .detail-int {
+      display: block;
+    }
+  }
+}
+.titl-pow {
+  &:hover {
+    & .detail-pow {
+      display: block;
+    }
+  }
+}
+.titl-edu {
+  &:hover {
+    & .detail-edu {
+      display: block;
+    }
+  }
+}
