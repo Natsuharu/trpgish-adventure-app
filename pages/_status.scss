@@ -49,7 +49,7 @@ table {
     height: 0;
     left: 0;
     bottom: -19px;
-    margin-left: 10px;
+    margin-left: 64px;
     border: solid transparent;
     border-color: rgba(51, 204, 153, 0);
     border-top-color: #33cc99;
@@ -59,31 +59,31 @@ table {
   }
 
   &.detail-str {
-    transform: translate(-263px, -111px);
+    transform: translate(-322px, -111px);
   }
 
   &.detail-con {
-    transform: translate(-194px, -111px);
+    transform: translate(-254px, -111px);
   }
 
   &.detail-siz {
-    transform: translate(-129px, -111px);
+    transform: translate(-188px, -111px);
   }
 
   &.detail-dex {
-    transform: translate(-55px, -111px);
+    transform: translate(-102px, -111px);
   }
   &.detail-app {
-    transform: translate(13px, -111px);
+    transform: translate(-36px, -111px);
   }
   &.detail-int {
-    transform: translate(81px, -111px);
+    transform: translate(33px, -111px);
   }
   &.detail-pow {
-    transform: translate(153px, -111px);
+    transform: translate(104px, -111px);
   }
   &.detail-edu {
-    transform: translate(224px, -111px);
+    transform: translate(174px, -111px);
   }
 }
 
