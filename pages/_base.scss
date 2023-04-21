@@ -3,7 +3,6 @@
 
 body {
   background-color: rgb(11, 11, 11, 27%);
-  // background: linear-gradient($cWhite, 10%, $cBlack);
 }
 
 .main-container {
@@ -25,8 +24,7 @@ body {
   transform: translate(-50%, 88px);
   overflow: hidden;
 
-  & .back-img {
-    background-image: url(./image/forest-1920.jpg);
+  & .img {
     position: absolute;
     height: 400px;
     width: 700px;
@@ -36,15 +34,33 @@ body {
     left: 50%;
     transform: translate(-50%, -200px);
     opacity: 0.8;
+    &.back-img {
+      background-image: url(./image/forest-1920.jpg);
 
-    &.transform {
-      @include animation(
-        $name: infinity-scroll-left,
-        $timing-function: ease,
-        $duration: 10s,
-        $fill-mode: both,
-        $delay: 0s
-      );
+      &.transform {
+        @include animation(
+          $name: infinity-scroll-left,
+          $timing-function: cubic-bezier(00, 0.51, 0.17, 1),
+          $duration: 4s,
+          $fill-mode: both,
+          $delay: 0s
+        );
+      }
+    }
+
+    &.back-img2 {
+      background-image: url(./image/darkforest-1920.jpg);
+      transform: translate(50%, -200px);
+
+      &.transform {
+        @include animation(
+          $name: infinity-scroll-left2,
+          $timing-function: cubic-bezier(0, 0.51, 0.17, 1),
+          $duration: 4s,
+          $fill-mode: both,
+          $delay: 0s
+        );
+      }
     }
   }
 }
@@ -55,5 +71,14 @@ body {
   }
   100% {
     transform: translate(-150%, -200px);
+  }
+}
+
+@keyframes infinity-scroll-left2 {
+  0% {
+    transform: translate(50%, -200px);
+  }
+  100% {
+    transform: translate(-50%, -200px);
   }
 }
