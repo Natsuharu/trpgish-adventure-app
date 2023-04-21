@@ -1,6 +1,5 @@
-const start_btn = document.querySelector(".start-btn");
-const status_btn = document.querySelector(".status-btn");
-// const status_btn = document.querySelector(".status-btn");
+const startBtn = document.querySelector(".start-btn");
+const statusBtn = document.querySelector(".status-btn");
 
 window.addEventListener(
   "animationend",
@@ -68,7 +67,7 @@ class NameAnimation {
   }
 }
 
-status_btn.addEventListener("click", function () {
+statusBtn.addEventListener("click", function () {
   const rn = new RandomNumber();
 });
 
@@ -112,10 +111,10 @@ class RandomNumber {
     const keys = Object.keys(todos);
     keys.forEach((todo) => {
       let type = todo;
-      let min_num = todos[type].min;
-      let max_num = todos[type].max;
+      let minNum = todos[type].min;
+      let maxNum = todos[type].max;
 
-      let num = this._Number(min_num, max_num);
+      let num = this._Number(minNum, maxNum);
       document.querySelector(`.${todo}`).innerHTML = num;
       document.querySelector(`.${todo}`).style.padding = "8.5px";
     });
@@ -127,7 +126,7 @@ class RandomNumber {
 }
 
 //ゲームスタート
-start_btn.addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
   const hn = new HeroName();
   const hero_name = hn.name();
 

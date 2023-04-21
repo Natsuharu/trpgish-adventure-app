@@ -342,7 +342,7 @@ body {
   height: 400px;
   width: 700px;
   background-size: 700px;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -200px);
@@ -413,7 +413,7 @@ table td {
   height: 0;
   left: 0;
   bottom: -19px;
-  margin-left: 10px;
+  margin-left: 64px;
   border: solid transparent;
   border-color: rgba(51, 204, 153, 0);
   border-top-color: #33cc99;
@@ -422,28 +422,28 @@ table td {
   content: " ";
 }
 .tooltip.detail-str {
-  transform: translate(-263px, -111px);
+  transform: translate(-322px, -111px);
 }
 .tooltip.detail-con {
-  transform: translate(-194px, -111px);
+  transform: translate(-254px, -111px);
 }
 .tooltip.detail-siz {
-  transform: translate(-129px, -111px);
+  transform: translate(-188px, -111px);
 }
 .tooltip.detail-dex {
-  transform: translate(-55px, -111px);
+  transform: translate(-102px, -111px);
 }
 .tooltip.detail-app {
-  transform: translate(13px, -111px);
+  transform: translate(-36px, -111px);
 }
 .tooltip.detail-int {
-  transform: translate(81px, -111px);
+  transform: translate(33px, -111px);
 }
 .tooltip.detail-pow {
-  transform: translate(153px, -111px);
+  transform: translate(104px, -111px);
 }
 .tooltip.detail-edu {
-  transform: translate(224px, -111px);
+  transform: translate(174px, -111px);
 }
 
 .titl-str:hover .detail-str {
