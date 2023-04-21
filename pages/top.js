@@ -1,15 +1,33 @@
-const loading = document.querySelector(".container");
-const loading_after = document.querySelector(".main-container");
 const start_btn = document.querySelector(".start-btn");
+const status_btn = document.querySelector(".status-btn");
+// const status_btn = document.querySelector(".status-btn");
 
 window.addEventListener(
   "animationend",
   function () {
-    loading.classList.add("hide");
-    loading_after.classList.add("inview");
+    const ic = new InviewClass(".main-container");
+    const hc = new HideClass(".container");
   },
   false
 );
+
+class InviewClass {
+  constructor(el) {
+    this.el = document.querySelectorAll(el);
+    this.el.forEach(function (e) {
+      e.classList.add("inview");
+    });
+  }
+}
+
+class HideClass {
+  constructor(el) {
+    this.el = document.querySelectorAll(el);
+    this.el.forEach(function (e) {
+      e.classList.add("hide");
+    });
+  }
+}
 
 window.addEventListener("DOMContentLoaded", function () {
   const ta = new TextAnimation(".loading-animation");
@@ -50,6 +68,100 @@ class NameAnimation {
   }
 }
 
-// document.addEventListener("click", function () {
-//   start - btn.classList.add("hide");
-// });
+status_btn.addEventListener("click", function () {
+  const rn = new RandomNumber();
+});
+
+class RandomNumber {
+  constructor() {
+    const todos = {
+      str: {
+        min: 3,
+        max: 18,
+      },
+      con: {
+        min: 3,
+        max: 18,
+      },
+      dex: {
+        min: 3,
+        max: 18,
+      },
+      app: {
+        min: 3,
+        max: 18,
+      },
+      pow: {
+        min: 3,
+        max: 18,
+      },
+      siz: {
+        min: 8,
+        max: 18,
+      },
+      int: {
+        min: 8,
+        max: 18,
+      },
+      edu: {
+        min: 6,
+        max: 21,
+      },
+    };
+
+    const keys = Object.keys(todos);
+    keys.forEach((todo) => {
+      let type = todo;
+      let min_num = todos[type].min;
+      let max_num = todos[type].max;
+
+      let num = this._Number(min_num, max_num);
+      document.querySelector(`.${todo}`).innerHTML = num;
+      document.querySelector(`.${todo}`).style.padding = "8.5px";
+    });
+  }
+
+  _Number(min, max) {
+    return Math.floor(Math.random() * (max + 1 - min) + min);
+  }
+}
+
+//ゲームスタート
+start_btn.addEventListener("click", function () {
+  const hn = new HeroName();
+  const hero_name = hn.name();
+
+  if (hero_name === "") {
+    alert("名前を入力してください");
+  } else {
+    const hc = new HideClass(".btn");
+    const tf = new Transform();
+    tf.transform(".text-box");
+    tf.transform(".status-container");
+    tf.transform(".character-img");
+    tf.transform(".back-img");
+  }
+});
+
+class HeroName {
+  name() {
+    return document.querySelector(".out").innerHTML;
+  }
+}
+
+class Transform {
+  transform(el) {
+    this.el = document.querySelectorAll(el);
+    this.el.forEach(function (e) {
+      e.classList.add("transform");
+    });
+  }
+}
+
+// window.addEventListener(
+//   "animationend",
+//   function () {
+
+//   },
+//   false
+// );

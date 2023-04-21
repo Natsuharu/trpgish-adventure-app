@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="main.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cardo&family=Cinzel&family=Dancing+Script&family=Fredericka+the+Great&family=Roboto:ital,wght@1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Fredericka+the+Great&family=Roboto:ital,wght@1,500&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="main.css" />
     <title>Document</title>
   </head>
   <body>
@@ -31,12 +32,65 @@
       </div> -->
 
       <div class="main-container">
-        <div class="back-img"></div>
+        <div class="img-wrap">
+          <div class="back-img"></div>
+        </div>
         <div class="character-img"></div>
-        <button class="start-btn">はじめる</button>
+        <button class="start-btn btn">はじめる</button>
         <div class="text-box name">
-          <p>▼名前を入力してください</p>
+          <p class="text">▼名前を入力してください</p>
           <p class="out"></p>
+        </div>
+
+        <div class="status-container">
+          <button class="status-btn btn">ステータスを振る</button>
+          <table class="status">
+            <tr>
+              <th class="titl-str">
+                STR
+                <span class="detail-str tooltip">筋力</span>
+              </th>
+
+              <th class="titl-con">
+                CON
+                <span class="detail-con tooltip">体力</span>
+              </th>
+              <th class="titl-siz">
+                SIZ
+                <span class="detail-siz tooltip">体格</span>
+              </th>
+              <th class="titl-dex">
+                DEX
+                <span class="detail-dex tooltip">すばやさ</span>
+              </th>
+              <th class="titl-app">
+                APP
+                <span class="detail-app tooltip">魅力</span>
+              </th>
+              <th class="titl-int">
+                INT
+                <span class="detail-int tooltip">かしこさ</span>
+              </th>
+              <th class="titl-pow">
+                POW
+                <span class="detail-pow tooltip">パワー</span>
+              </th>
+              <th class="titl-edu">
+                EDU
+                <span class="detail-edu tooltip">知識力</span>
+              </th>
+            </tr>
+            <tr>
+              <td class="str"></td>
+              <td class="con"></td>
+              <td class="siz"></td>
+              <td class="dex"></td>
+              <td class="app"></td>
+              <td class="int"></td>
+              <td class="pow"></td>
+              <td class="edu"></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>

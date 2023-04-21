@@ -5,23 +5,28 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  background: black;
+  background: $cBlack;
   width: 275px;
   height: 65px;
   margin: 10px;
   border-radius: 10px;
-  border: 3px solid white;
+  border: 3px solid $cWhite;
 
   &.name {
     transform: translate(-51%, 384px);
   }
   & > p {
-    font-family: "Roboto", sans-serif;
-    font-size: large;
-    color: white;
+    font-family: "DotGothic16", sans-serif;
+
+    color: $cWhite;
     text-align: center;
   }
   & .out {
     transform: translate(10px, 0px);
+  }
+
+  &.transform {
+    transition: all 0.5s;
+    transform: translate(-51%, 495px);
   }
 }
