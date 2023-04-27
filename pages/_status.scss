@@ -6,13 +6,55 @@
   top: 50%;
   left: 50%;
   transform: translate(-48%, 558px);
-  background-color: black;
+  background-color: $cBlack;
 
   &.transform {
     transition: all 0.5s;
     transform: translate(-48%, 635px);
   }
+
+  & .screen {
+    background: $cBlack;
+    border-radius: 10px;
+    border: 3px solid $cWhite;
+    position: absolute;
+
+    & p {
+      cursor: pointer;
+      color: #fff;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    &.condition {
+      width: 280px;
+      height: 115px;
+
+      transform: translate(-307px, -5px);
+    }
+    &.action-choice {
+      width: 280px;
+      height: 115px;
+      transform: translate(-307px, -128px);
+
+      & p {
+        display: block;
+        margin-left: 35px;
+
+        & .choice {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 13px 13px 0 0;
+          border-color: transparent $cWhite transparent transparent;
+          transform: translate(-90px, 5px) rotate(-45deg);
+        }
+      }
+    }
+  }
 }
+
 table {
   border-collapse: collapse;
   border: 3px solid $cWhite;
