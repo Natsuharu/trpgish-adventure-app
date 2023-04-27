@@ -1,12 +1,40 @@
 const startBtn = document.querySelector(".start-btn");
 const statusBtn = document.querySelector(".status-btn");
-const img = document.querySelector("back-img2");
+
+document.addEventListener(
+  "click",
+  (elem) => {
+    const ch = new Choice();
+    ch.action("action", elem);
+  },
+  false
+);
+
+class Choice {
+  action(el, elem) {
+    const actionChoice = document.querySelectorAll(`.${el}`);
+    actionChoice.forEach(function (e) {
+      let temp = e.querySelector(".choice");
+      if (temp !== null) {
+        e.removeChild(temp);
+      }
+    });
+
+    let target = elem.target.className;
+    if (target === el) {
+      const choice = document.createElement("span");
+      choice.className = "choice";
+      elem.target.appendChild(choice);
+    }
+  }
+}
 
 window.addEventListener(
   "animationend",
   function () {
     const ic = new InviewClass(".main-container");
-    const hc = new HideClass(".container");
+    const hc = new HideClass();
+    hc.hide(".container");
   },
   false
 );
@@ -68,7 +96,9 @@ class NameAnimation {
   }
 }
 
+let flag = false;
 statusBtn.addEventListener("click", function () {
+  flag = true;
   const rn = new RandomNumber();
 });
 
@@ -133,6 +163,8 @@ startBtn.addEventListener("click", function () {
 
   if (hero_name === "") {
     alert("名前を入力してください");
+  } else if (flag === false) {
+    alert("ステータスを振ってください");
   } else {
     const hc = new HideClass();
     hc.hide(".btn");
