@@ -19,11 +19,17 @@
     border: 3px solid $cWhite;
     position: absolute;
 
-    & p {
+    & p,
+    div {
       cursor: pointer;
-      color: #fff;
-      margin: 10px;
+      color: $cWhite;
+      margin-left: 10px;
       display: inline-block;
+    }
+
+    & div {
+      display: block;
+      margin: 10px 10px 10px 14px;
     }
 
     &.condition {
@@ -33,13 +39,18 @@
       transform: translate(-307px, -5px);
     }
     &.action-choice {
-      width: 280px;
+      width: 145px;
       height: 115px;
       transform: translate(-307px, -128px);
+      opacity: 0;
+
+      &.inview {
+        opacity: 1;
+      }
 
       & p {
         display: block;
-        margin-left: 35px;
+        margin: 10px 10px 10px 35px;
 
         & .choice {
           position: absolute;
@@ -49,6 +60,12 @@
           border-width: 13px 13px 0 0;
           border-color: transparent $cWhite transparent transparent;
           transform: translate(-90px, 5px) rotate(-45deg);
+        }
+
+        &#magic {
+          & .choice {
+            transform: translate(-75px, 5px) rotate(-45deg);
+          }
         }
       }
     }
