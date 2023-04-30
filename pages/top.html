@@ -42,17 +42,30 @@
         <button class="start-btn btn">はじめる</button>
         <div class="text-box name">
           <p class="text">▼名前を入力してください</p>
-          <p class="out">|</p>
+          <p class="out"></p>
         </div>
 
         <div class="status-container">
           <div class="screen condition">
-            <p class="hp">HP</p>
-            <p>10</p>
+            <div>
+              なまえ
+              <p class="character-name"></p>
+            </div>
+
+            <div class="hp">
+              HP
+              <p class="health"></p>
+            </div>
+            <div class="mp">
+              MP
+              <p class="mental"></p>
+            </div>
           </div>
           <div class="screen action-choice">
-            <p class="action">たたかう<span class="choice"></span></p>
-            <p class="action">観察する</p>
+            <p class="action" id="battle">
+              たたかう<span class="choice"></span>
+            </p>
+            <p class="action" id="magic">まほう</p>
             <p class="action">魅了する</p>
           </div>
           <button class="status-btn btn">ステータスを振る</button>

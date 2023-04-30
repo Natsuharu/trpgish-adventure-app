@@ -257,6 +257,9 @@ button.btn.hide {
 .text-box.name {
   transform: translate(-51%, 384px);
 }
+.text-box.name .text.transform {
+  transform: translate(10px, 15px);
+}
 .text-box > p {
   font-family: "DotGothic16", sans-serif;
   color: white;
@@ -318,16 +321,17 @@ button.btn.hide {
 .text-box.transform {
   transition: all 0.5s;
   transform: translate(-51%, 495px);
+  width: 700px;
 }
 
 @keyframes kf-chars-animate {
   0% {
     opacity: 0;
-    transform: translateY(20%);
+    transform: translate(10px, 0px);
   }
   100% {
     opacity: 1;
-    transform: translateY(70%);
+    transform: translate(10px, 5px);
   }
 }
 .chara {
@@ -480,11 +484,16 @@ body {
   border: 3px solid white;
   position: absolute;
 }
-.status-container .screen p {
+.status-container .screen p,
+.status-container .screen div {
   cursor: pointer;
-  color: #fff;
-  margin: 10px;
+  color: white;
+  margin-left: 10px;
   display: inline-block;
+}
+.status-container .screen div {
+  display: block;
+  margin: 10px 10px 10px 14px;
 }
 .status-container .screen.condition {
   width: 280px;
@@ -492,13 +501,17 @@ body {
   transform: translate(-307px, -5px);
 }
 .status-container .screen.action-choice {
-  width: 280px;
+  width: 145px;
   height: 115px;
   transform: translate(-307px, -128px);
+  opacity: 0;
+}
+.status-container .screen.action-choice.inview {
+  opacity: 1;
 }
 .status-container .screen.action-choice p {
   display: block;
-  margin-left: 35px;
+  margin: 10px 10px 10px 35px;
 }
 .status-container .screen.action-choice p .choice {
   position: absolute;
@@ -508,6 +521,9 @@ body {
   border-width: 13px 13px 0 0;
   border-color: transparent white transparent transparent;
   transform: translate(-90px, 5px) rotate(-45deg);
+}
+.status-container .screen.action-choice p#magic .choice {
+  transform: translate(-75px, 5px) rotate(-45deg);
 }
 
 table {
