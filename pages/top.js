@@ -1,80 +1,17 @@
 const startBtn = document.querySelector(".start-btn");
 const statusBtn = document.querySelector(".status-btn");
-const healthValue = document.querySelector(".health");
 const valueOut = document.querySelector(".out");
 
-window.addEventListener(
-  "animationend",
-  function () {
-    const ic = new InviewClass();
-    ic.inview(".main-container");
-    const hc = new HideClass();
-    hc.hide(".container");
-  },
-  false
-);
-
-class InviewClass {
-  inview(el) {
-    this.el = document.querySelectorAll(el);
-    this.el.forEach(function (e) {
-      e.classList.add("inview");
-    });
-  }
-}
-
-class HideClass {
-  hide(el) {
-    this.el = document.querySelectorAll(el);
-    this.el.forEach(function (e) {
-      e.classList.add("hide");
-    });
-  }
-}
-
-window.addEventListener("DOMContentLoaded", function () {
-  const ta = new TextAnimation(".loading-animation");
-});
-
-class TextAnimation {
-  constructor(el) {
-    this.el = document.querySelector(el);
-    this.chars = this.el.innerHTML.trim().split("");
-    this.el.innerHTML = this._splitText();
-  }
-
-  _splitText() {
-    return this.chars.reduce((acc, curr) => {
-      return `${acc}<span class="char">${curr}</span>`;
-    }, "");
-  }
-}
-
 let keyString = "";
-window.onkeydown = function (el) {
-  const na = new NameAnimation(el);
-};
-
-class NameAnimation {
-  constructor(el) {
-    let key = el.key;
-    if (el.keyCode === 0) {
-      //変換かな
-      event.preventDefault();
-    } else if (el.keyCode === 8) {
-      //back
-      keyString = keyString.slice(0, -1);
-      valueOut.innerHTML = keyString;
-    } else if (el.keyCode === 89 && settings.gameStart.Boolean === true) {
-      // y
-      const bs = new BattleScene();
-      bs.Slime();
-    } else {
-      keyString += key;
-      valueOut.innerHTML = keyString;
-    }
-  }
-}
+let firstName;
+let firstHP;
+let firstElm;
+let firstType;
+let secondName;
+let secondHP;
+let secondElm;
+let secondType;
+let damage;
 
 //ステータス
 const statuses = {
@@ -115,47 +52,142 @@ const statuses = {
 //テキスト文
 const texts = {
   encounter: {
-    text: "モンスターがあらわれた！",
+    text: "モンスターがあらわれた！ (行動を選択してください)",
   },
   attack: {
-    text: "こうげきしますか？ Y (キーを押すとこうげきします)",
-  },
-  heroAttack: {
-    text: "のこうげき！",
+    text: "こうげきしますか？ (enterキーを押すとこうげきします)",
   },
   magic: {
-    text: "まほうをつかいますか？ Y (キーを押すとこうげきします)",
+    text: "まほうをつかいますか？ (enterキーを押すとこうげきします)",
   },
-  enemyAttack: {
-    text: "敵のこうげき！",
+  win: {
+    text: "モンスターを倒した！",
+  },
+  lose: {
+    text: "HPが0になった! Game Over",
+  },
+
+  guide: {
+    text: "(enterを押してください)",
+  },
+  guide2: {
+    text: "行動を選択してください",
   },
 };
 
 const settings = {
-  gameStart: {
-    Boolean: false,
-  },
-  flag: {
+  statusFlag: {
     Boolean: false,
   },
   action: {
     choice: null,
   },
+  round: {
+    count: 0,
+  },
+  actionFlag: {
+    Boolean: false,
+  },
 };
+
+const scenes = {
+  init: "Init",
+  battle: "Battle",
+  event: "Event",
+};
+let scene = scenes.init;
 
 //モンスター
 const monsters = {
   slime: {
+    name: "スライム",
+    type: "slime",
     hp: 10,
     min: 1,
     max: 5,
     dex: 3,
   },
 };
+let battleEnemy = monsters.slime.type;
 
-let health = "";
+const job = {
+  hero: {
+    name: null,
+    hp: null,
+    mp: null,
+  },
+};
+
+window.addEventListener(
+  "animationend",
+  function () {
+    inview(".main-container");
+    hide(".container");
+  },
+  false
+);
+
+function inview(el) {
+  this.el = document.querySelectorAll(el);
+  this.el.forEach(function (e) {
+    e.classList.add("inview");
+  });
+}
+
+function hide(el) {
+  this.el = document.querySelectorAll(el);
+  this.el.forEach(function (e) {
+    e.classList.add("hide");
+  });
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const ta = new TextAnimation(".loading-animation");
+});
+
+class TextAnimation {
+  constructor(el) {
+    this.el = document.querySelector(el);
+    this.chars = this.el.innerHTML.trim().split("");
+    this.el.innerHTML = this._splitText();
+  }
+
+  _splitText() {
+    return this.chars.reduce((acc, curr) => {
+      return `${acc}<span class="char">${curr}</span>`;
+    }, "");
+  }
+}
+
+// キー入力チェック
+window.onkeydown = function (el) {
+  const na = new NameAnimation(el);
+};
+
+// 名前入力
+class NameAnimation {
+  constructor(el) {
+    let key = el.key;
+    if (el.keyCode === 0 && scene === scenes.init) {
+      //変換かな
+      event.preventDefault();
+    } else if (el.keyCode === 8 && scene === "Init") {
+      //back
+      keyString = keyString.slice(0, -1);
+      valueOut.innerHTML = keyString;
+    } else if (el.keyCode === 13 && scene === "Battle") {
+      // Enterキー
+      const bs = new BattleScene(battleEnemy);
+    } else if (scene === "Init") {
+      keyString += key;
+      valueOut.innerHTML = keyString;
+    }
+  }
+}
+
+// ステータス割り振り
 statusBtn.addEventListener("click", function () {
-  settings.flag.Boolean = true;
+  settings.statusFlag.Boolean = true;
 
   const rn = new RandomNumber();
 
@@ -170,13 +202,16 @@ statusBtn.addEventListener("click", function () {
     document.querySelector(`.${type}`).style.padding = "8.5px";
     statuses[type].valueOfStatus = num;
   });
-  healthValue.innerHTML = rn.health(
+
+  job.hero.hp = rn.health(
     statuses.con.valueOfStatus,
     statuses.siz.valueOfStatus
   );
 
-  const cg = new ChangeHtml();
-  cg.change(".mental", statuses.pow.valueOfStatus);
+  job.hero.mp = statuses.pow.valueOfStatus;
+
+  changeHTML(".health", job.hero.hp);
+  changeHTML(".mental", statuses.pow.valueOfStatus);
 });
 
 //ダイスロール
@@ -190,115 +225,169 @@ class RandomNumber {
 }
 
 //ゲームスタート
-let hero_name = "";
 startBtn.addEventListener("click", function () {
-  settings.gameStart.Boolean = true;
-  statuses.valueOfHeroName = valueOut.innerHTML;
+  scene = scenes.event;
 
-  hero_name = statuses.valueOfHeroName;
+  job.hero.name = valueOut.innerHTML;
 
-  if (hero_name === "") {
+  if (job.hero.name === "") {
     alert("名前を入力してください");
-  } else if (settings.flag.Boolean === false) {
+  } else if (settings.statusFlag.Boolean === false) {
     alert("ステータスを振ってください");
   } else {
-    const hc = new HideClass();
-    hc.hide(".btn");
-    hc.hide(".out");
+    hide(".btn");
+    hide(".out");
 
-    const tf = new Transform();
-    tf.transform(".text-box");
-    tf.transform(".text");
-    tf.transform(".status-container");
-    tf.transform(".character-img");
+    transform(".text-box");
+    transform(".text");
+    transform(".status-container");
+    transform(".character-img");
+    transform(".back-img");
+    transform(".back-img2");
 
-    const cg = new ChangeHtml();
-    cg.change(".character-name", hero_name);
-    cg.change(".text", texts.encounter.text);
+    changeHTML(".character-name", job.hero.name);
+    changeHTML(".text", texts.encounter.text);
+    changeHTML(".enemy-name", monsters.slime.name);
+    changeHTML(".enemy-health", monsters.slime.hp);
+    changeHTML(".enemy-dex", monsters.slime.dex);
 
     const ta = new TextAnimation(".text");
 
-    tf.transform(".back-img");
-    tf.transform(".back-img2");
-
-    const ic = new InviewClass();
-    ic.inview(".character-img2");
-    ic.inview(".action-choice");
+    inview(".character-img2");
+    inview(".action-choice");
+    inview(".enemy");
   }
 });
 
-class ChangeHtml {
-  change(el, contain) {
-    document.querySelector(el).innerHTML = contain;
-  }
-  heroChange(el, contain) {
-    const rn = new RandomNumber();
-    let damage = rn.number(monsters.slime.min, monsters.slime.max);
-
-    document.querySelector(el).innerHTML =
-      hero_name + " " + contain + ` 敵は ${damage} のダメージをうけた！`;
-  }
+function changeHTML(el, contain) {
+  document.querySelector(el).innerHTML = contain;
 }
 
-class Transform {
-  transform(el) {
-    this.el = document.querySelectorAll(el);
-    this.el.forEach(function (e) {
-      e.classList.add("transform");
-    });
-  }
+function transform(el) {
+  this.el = document.querySelectorAll(el);
+  this.el.forEach(function (e) {
+    e.classList.add("transform");
+  });
 }
 
 //アクション選択
 document.addEventListener(
   "click",
   (elem) => {
-    const ch = new Choice();
-    ch.action("action", elem);
+    if (settings.actionFlag.Boolean === false) {
+      action("action", elem);
+    }
   },
   false
 );
 
-class Choice {
-  action(el, elem) {
-    const actionChoice = document.querySelectorAll(`.${el}`);
-    let target = elem.target.className;
-    let targetId = elem.target.id;
+function action(el, elem) {
+  const actionChoice = document.querySelectorAll(`.${el}`);
+  let target = elem.target.className;
+  let targetId = elem.target.id;
 
-    if (target === el) {
-      actionChoice.forEach(function (e) {
-        let temp = e.querySelector(".choice");
-        if (temp !== null) {
-          e.removeChild(temp);
-        }
-      });
-
-      const choice = document.createElement("span");
-      choice.className = "choice";
-      elem.target.appendChild(choice);
-
-      const cg = new ChangeHtml();
-      if (targetId === "attack") {
-        cg.change(".text", texts.attack.text);
-        settings.action.choice = "attack";
-      } else if (targetId === "magic") {
-        cg.change(".text", texts.magic.text);
-        settings.action.choice = "magic";
+  if (target === el) {
+    actionChoice.forEach(function (e) {
+      let temp = e.querySelector(".choice");
+      if (temp !== null) {
+        e.removeChild(temp);
       }
+    });
+
+    const choice = document.createElement("span");
+    choice.className = "choice";
+    elem.target.appendChild(choice);
+
+    scene = scenes.battle;
+
+    if (targetId === "attack") {
+      changeHTML(".text", texts.attack.text);
+      settings.action.choice = "attack";
+    } else if (targetId === "magic") {
+      changeHTML(".text", texts.magic.text);
+      settings.action.choice = "magic";
     }
   }
 }
 
+// バトル
 class BattleScene {
-  Slime() {
-    const cg = new ChangeHtml();
-    if (monsters.slime.dex > statuses.dex.valueOfStatus) {
-      cg.change(".text", texts.enemyAttack.text);
-    } else {
-      cg.heroChange(".text", texts.heroAttack.text);
-    }
-    // if (settings.action.choice === "attack") {
-    //   console.log("yes");
-    // }
+  constructor() {
+    settings.actionFlag.Boolean = true;
+    this._Slime();
   }
+
+  _Slime() {
+    if (monsters.slime.dex > statuses.dex.valueOfStatus) {
+      firstName = job.hero.name;
+      firstHP = job.hero.hp;
+      firstElm = ".health";
+      firstType = "hero";
+
+      secondName = monsters.slime.name;
+      secondHP = monsters.slime.hp;
+      secondElm = ".enemy-health";
+      secondType = "enemy";
+    } else {
+      firstName = monsters.slime.name;
+      firstHP = monsters.slime.hp;
+      firstElm = ".enemy-health";
+      firstType = "enemy";
+
+      secondName = job.hero.name;
+      secondHP = job.hero.hp;
+      secondElm = ".health";
+      secondType = "hero";
+    }
+
+    if (settings.round.count == 0) {
+      // 先行の攻撃
+      attack(".text", firstName, firstHP, firstElm, firstType);
+    } else if (settings.round.count == 1) {
+      // 後攻の攻撃
+      attack(".text", secondName, secondHP, secondElm, secondType);
+    } else if (settings.round.count == 2) {
+      // ターン終了
+      settings.round.count = -1;
+      settings.actionFlag.Boolean = false;
+      changeHTML(".text", texts.guide2.text);
+    }
+
+    settings.round.count++;
+  }
+}
+
+function attack(el, name, hp, elm, type) {
+  const rn = new RandomNumber();
+  scene = scenes.battle;
+
+  if ((settings.action.choice = "attack")) {
+    //ダメージ 1d6 + db(siz + con)
+    damage = rn.number(1, 6);
+  }
+
+  document.querySelector(el).innerHTML =
+    name + ` は ${damage} のダメージをうけた！` + texts.guide.text;
+
+  hp -= damage;
+  if (type === "hero") {
+    job.hero.hp = hp;
+  } else {
+    monsters.slime.hp = hp;
+  }
+
+  // hp判定
+  // if (enemy === "slime") {
+  if (monsters.slime.hp <= 0) {
+    changeHTML(".text", texts.win.text);
+    settings.actionFlag.Boolean = false;
+    scene = scenes.event;
+    hide(".character-img2");
+  } else if (job.hero.hp <= 0) {
+    changeHTML(".text", texts.lose.text);
+    settings.actionFlag.Boolean === false;
+  }
+  // }
+
+  changeHTML(elm, hp);
 }

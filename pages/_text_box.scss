@@ -40,7 +40,7 @@
         $fill-mode: both
       );
 
-      @for $i from 1 through 12 {
+      @for $i from 1 through 26 {
         &:nth-child(#{$i}) {
           animation-delay: $i * 0.06s;
         }
