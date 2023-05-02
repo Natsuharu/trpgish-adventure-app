@@ -35,9 +35,20 @@
     &.condition {
       width: 280px;
       height: 115px;
-
       transform: translate(-307px, -5px);
     }
+
+    &.enemy {
+      width: 206px;
+      height: 115px;
+      transform: translate(536px, -289px);
+      opacity: 0;
+
+      &.inview {
+        opacity: 1;
+      }
+    }
+
     &.action-choice {
       width: 145px;
       height: 115px;
