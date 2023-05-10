@@ -1,4 +1,4 @@
-@use "../mixin" as *;
+@use "mixin" as *;
 @use "variable" as *;
 
 * {
@@ -88,7 +88,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(30%, 600%);
+  transform: translate(7%, 600%);
 
   & .char {
     display: inline-block;
@@ -124,7 +124,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-20%, 760%);
+  transform: translate(-24%, 760%);
   background-color: $cWhite;
   border: 5px solid $cBlack;
   padding: 3px;
