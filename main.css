@@ -83,7 +83,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(30%, 600%);
+  transform: translate(7%, 600%);
 }
 .loading-animation .char {
   display: inline-block;
@@ -130,7 +130,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-20%, 760%);
+  transform: translate(-24%, 760%);
   background-color: white;
   border: 5px solid black;
   padding: 3px;
@@ -762,5 +762,5 @@ table td {
 }
 
 .main-container {
-  opacity: 1;
+  opacity: 0;
 }/*# sourceMappingURL=main.css.map */
