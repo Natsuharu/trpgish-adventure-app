@@ -11,7 +11,6 @@
     background-image: url(./image/character_yusha_01_red.png);
     height: 160px;
     background-size: 150px;
-
     transform: translate(-50%, 145px);
 
     @include animation(
@@ -27,6 +26,10 @@
         $duration: 0.7s,
         $timing-function: ease
       );
+    }
+
+    &.hide {
+      @include animation($name: kf-hero-death, $duration: 1s);
     }
   }
 
@@ -66,6 +69,33 @@
   }
   100% {
     transform: translate(-221%, 322px);
+  }
+}
+
+@keyframes kf-hero-death {
+  0% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
   }
 }
 

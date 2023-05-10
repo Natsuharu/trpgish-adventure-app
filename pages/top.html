@@ -42,7 +42,12 @@
         <button class="start-btn btn">はじめる</button>
         <div class="text-box name">
           <p class="text">▼名前を入力してください</p>
-          <p class="out"></p>
+          <input
+            type="text"
+            maxlength="6"
+            placeholder="6文字まで入力可能"
+            class="out"
+          />
         </div>
 
         <div class="status-container">
@@ -82,7 +87,22 @@
               たたかう<span class="choice"></span>
             </p>
             <p class="action" id="magic">まほう</p>
-            <p class="action">魅了する</p>
+            <p class="action" id="deathblow">必殺技</p>
+          </div>
+          <div class="screen ability">
+            <div>たたかう 1d 6</div>
+            <div>
+              まほう 1d
+              <p class="m-db"></p>
+            </div>
+            <div>
+              必殺技 1d6 +
+              <p class="db"></p>
+            </div>
+            <div>
+              必殺技の成功率
+              <p class="rate"></p>
+            </div>
           </div>
           <button class="status-btn btn">ステータスを振る</button>
           <table class="status">
