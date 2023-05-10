@@ -48,7 +48,12 @@
     }
   }
   & .out {
-    transform: translate(-2px, 0px);
+    transform: translate(52px, 4px);
+    background-color: $cBlack;
+    font-family: "DotGothic16", sans-serif;
+    color: $cWhite;
+    text-align: center;
+    border: none;
 
     &.hide {
       opacity: 0;

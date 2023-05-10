@@ -12,6 +12,7 @@ let secondHP;
 let secondElm;
 let secondType;
 let damage;
+let db;
 
 //ステータス
 const statuses = {
@@ -60,18 +61,26 @@ const texts = {
   magic: {
     text: "まほうをつかいますか？ (enterキーを押すとこうげきします)",
   },
+  deathblow: {
+    text: "必殺技をつかいますか？(enterキーを押すとこうげきします)",
+  },
   win: {
     text: "モンスターを倒した！",
   },
   lose: {
-    text: "HPが0になった! Game Over",
+    text: "ダメージを受けてHPが0になってしまった! Game Over",
   },
-
   guide: {
     text: "(enterを押してください)",
   },
   guide2: {
     text: "行動を選択してください",
+  },
+  next: {
+    text: "最初から始めますか？ (Yキーを押すとスタート画面に戻ります)",
+  },
+  clear: {
+    text: "Game Clear! (Yキーを押すとスタート画面に戻ります)",
   },
 };
 
@@ -94,6 +103,8 @@ const scenes = {
   init: "Init",
   battle: "Battle",
   event: "Event",
+  gameOver: "GameOver",
+  gameClear: "GameClear",
 };
 let scene = scenes.init;
 
@@ -102,7 +113,7 @@ const monsters = {
   slime: {
     name: "スライム",
     type: "slime",
-    hp: 10,
+    hp: 20,
     min: 1,
     max: 5,
     dex: 3,
@@ -161,27 +172,20 @@ class TextAnimation {
 
 // キー入力チェック
 window.onkeydown = function (el) {
-  const na = new NameAnimation(el);
+  keyCheck(el);
 };
 
-// 名前入力
-class NameAnimation {
-  constructor(el) {
-    let key = el.key;
-    if (el.keyCode === 0 && scene === scenes.init) {
-      //変換かな
-      event.preventDefault();
-    } else if (el.keyCode === 8 && scene === "Init") {
-      //back
-      keyString = keyString.slice(0, -1);
-      valueOut.innerHTML = keyString;
-    } else if (el.keyCode === 13 && scene === "Battle") {
-      // Enterキー
-      const bs = new BattleScene(battleEnemy);
-    } else if (scene === "Init") {
-      keyString += key;
-      valueOut.innerHTML = keyString;
-    }
+function keyCheck(el) {
+  if (el.keyCode === 13 && scene === "Battle") {
+    const bs = new BattleScene(battleEnemy);
+  } else if (el.keyCode === 13 && scene === "GameOver") {
+    changeHTML(".text", texts.next.text);
+  } else if (el.keyCode === 89 && scene === "GameOver") {
+    location.reload();
+  } else if (el.keyCode === 13 && scene === "GameClear") {
+    changeHTML(".text", texts.clear.text);
+  } else if (el.keyCode === 89 && scene === "GameClear") {
+    location.reload();
   }
 }
 
@@ -212,6 +216,14 @@ statusBtn.addEventListener("click", function () {
 
   changeHTML(".health", job.hero.hp);
   changeHTML(".mental", statuses.pow.valueOfStatus);
+  changeHTML(".db", job.hero.hp);
+  changeHTML(".m-db", Math.floor(statuses.con.valueOfStatus / 2));
+  changeHTML(
+    ".rate",
+    Math.floor(
+      ((statuses.edu.valueOfStatus - 5) / statuses.edu.valueOfStatus) * 100
+    ) + "%"
+  );
 });
 
 //ダイスロール
@@ -228,7 +240,7 @@ class RandomNumber {
 startBtn.addEventListener("click", function () {
   scene = scenes.event;
 
-  job.hero.name = valueOut.innerHTML;
+  job.hero.name = valueOut.value;
 
   if (job.hero.name === "") {
     alert("名前を入力してください");
@@ -256,6 +268,7 @@ startBtn.addEventListener("click", function () {
     inview(".character-img2");
     inview(".action-choice");
     inview(".enemy");
+    inview(".ability");
   }
 });
 
@@ -294,6 +307,7 @@ function action(el, elem) {
       }
     });
 
+    // 選択マークの三角表示
     const choice = document.createElement("span");
     choice.className = "choice";
     elem.target.appendChild(choice);
@@ -306,6 +320,9 @@ function action(el, elem) {
     } else if (targetId === "magic") {
       changeHTML(".text", texts.magic.text);
       settings.action.choice = "magic";
+    } else if (targetId === "deathblow") {
+      changeHTML(".text", texts.deathblow.text);
+      settings.action.choice = "deathblow";
     }
   }
 }
@@ -318,6 +335,7 @@ class BattleScene {
   }
 
   _Slime() {
+    // すばやさ判定
     if (monsters.slime.dex > statuses.dex.valueOfStatus) {
       firstName = job.hero.name;
       firstHP = job.hero.hp;
@@ -361,13 +379,36 @@ function attack(el, name, hp, elm, type) {
   const rn = new RandomNumber();
   scene = scenes.battle;
 
-  if ((settings.action.choice = "attack")) {
-    //ダメージ 1d6 + db(siz + con)
-    damage = rn.number(1, 6);
+  let hit = rn.number(1, statuses.edu.valueOfStatus);
+
+  if (type != "hero") {
+    //ダメージボーナス
+    db = rn.health(statuses.con.valueOfStatus, statuses.siz.valueOfStatus);
+
+    if (settings.action.choice === "attack") {
+      //ダメージ 1d6
+      damage = rn.number(1, 6);
+    } else if (settings.action.choice === "magic") {
+      //ダメージ 1d(pow/2)
+      damage = rn.number(1, Math.floor(statuses.con.valueOfStatus / 2));
+    } else if (settings.action.choice === "deathblow" && hit >= 6) {
+      //必殺技 成功判定
+      damage = rn.number(1, 6) + db;
+    } else if (settings.action.choice === "deathblow" && hit <= 6) {
+      //必殺技 失敗
+      damage = 0;
+    }
+  } else {
+    damage = rn.number(1, monsters.slime.max);
   }
 
-  document.querySelector(el).innerHTML =
-    name + ` は ${damage} のダメージをうけた！` + texts.guide.text;
+  if (damage === 0) {
+    document.querySelector(el).innerHTML =
+      name + " はこうげきをかわした！" + texts.guide.text;
+  } else {
+    document.querySelector(el).innerHTML =
+      name + ` は ${damage} のダメージをうけた！` + texts.guide.text;
+  }
 
   hp -= damage;
   if (type === "hero") {
@@ -381,11 +422,13 @@ function attack(el, name, hp, elm, type) {
   if (monsters.slime.hp <= 0) {
     changeHTML(".text", texts.win.text);
     settings.actionFlag.Boolean = false;
-    scene = scenes.event;
+    scene = scenes.gameClear;
     hide(".character-img2");
   } else if (job.hero.hp <= 0) {
     changeHTML(".text", texts.lose.text);
     settings.actionFlag.Boolean === false;
+    scene = scenes.gameOver;
+    hide(".character-img");
   }
   // }
 

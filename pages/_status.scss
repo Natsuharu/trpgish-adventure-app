@@ -78,6 +78,26 @@
             transform: translate(-75px, 5px) rotate(-45deg);
           }
         }
+
+        &#deathblow {
+          & .choice {
+            transform: translate(-75px, 5px) rotate(-45deg);
+          }
+        }
+      }
+    }
+    &.ability {
+      width: 222px;
+      height: 148px;
+      transform: translate(-307px, -281px);
+      opacity: 0;
+
+      &.inview {
+        opacity: 1;
+      }
+
+      & p {
+        margin: 0px;
       }
     }
   }

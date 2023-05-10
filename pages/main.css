@@ -355,7 +355,12 @@ button.btn.hide {
   animation-delay: 1.56s;
 }
 .text-box .out {
-  transform: translate(-2px, 0px);
+  transform: translate(52px, 4px);
+  background-color: black;
+  font-family: "DotGothic16", sans-serif;
+  color: white;
+  text-align: center;
+  border: none;
 }
 .text-box .out.hide {
   opacity: 0;
@@ -405,6 +410,15 @@ button.btn.hide {
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
+.chara.character-img.hide {
+  animation-name: kf-hero-death;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
 .chara.character-img2 {
   background-image: url(./image/character_monster_slime_green.png);
   height: 120px;
@@ -441,6 +455,32 @@ button.btn.hide {
   }
   100% {
     transform: translate(-221%, 322px);
+  }
+}
+@keyframes kf-hero-death {
+  0% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
   }
 }
 @keyframes kf-enemy-death {
@@ -604,6 +644,21 @@ body {
 }
 .status-container .screen.action-choice p#magic .choice {
   transform: translate(-75px, 5px) rotate(-45deg);
+}
+.status-container .screen.action-choice p#deathblow .choice {
+  transform: translate(-75px, 5px) rotate(-45deg);
+}
+.status-container .screen.ability {
+  width: 222px;
+  height: 148px;
+  transform: translate(-307px, -281px);
+  opacity: 0;
+}
+.status-container .screen.ability.inview {
+  opacity: 1;
+}
+.status-container .screen.ability p {
+  margin: 0px;
 }
 
 table {
