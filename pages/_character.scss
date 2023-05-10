@@ -1,0 +1,121 @@
+@use "../mixin" as *;
+
+.chara {
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+
+  &.character-img {
+    background-image: url(./image/character_yusha_01_red.png);
+    height: 160px;
+    background-size: 150px;
+    transform: translate(-50%, 145px);
+
+    @include animation(
+      $name: kf-up-down,
+      $duration: 0.7s,
+      $timing-function: ease,
+      $iteration-count: infinite
+    );
+
+    &.transform {
+      @include animation(
+        $name: kf-start-up-down,
+        $duration: 0.7s,
+        $timing-function: ease
+      );
+    }
+
+    &.hide {
+      @include animation($name: kf-hero-death, $duration: 1s);
+    }
+  }
+
+  &.character-img2 {
+    background-image: url(./image/character_monster_slime_green.png);
+    height: 120px;
+
+    background-size: 150px;
+    transform: translate(50%, 366px);
+    opacity: 0;
+
+    &.inview {
+      animation-delay: 2s;
+      transition: all 2s;
+      opacity: 1;
+    }
+
+    &.hide {
+      @include animation($name: kf-enemy-death, $duration: 1s);
+    }
+  }
+}
+
+@keyframes kf-up-down {
+  0%,
+  100% {
+    transform: translateY(-50%, 145px);
+  }
+  50% {
+    transform: translate(-50%, 135px);
+  }
+}
+
+@keyframes kf-start-up-down {
+  0% {
+    transform: translateY(-50%, 145px);
+  }
+  100% {
+    transform: translate(-221%, 322px);
+  }
+}
+
+@keyframes kf-hero-death {
+  0% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(-221%, 322px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-221%, 322px);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-enemy-death {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
