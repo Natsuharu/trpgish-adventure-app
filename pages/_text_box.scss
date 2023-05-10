@@ -1,0 +1,80 @@
+@use "variable" as *;
+@use "../mixin" as *;
+
+.text-box {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: $cBlack;
+  width: 275px;
+  height: 65px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 3px solid $cWhite;
+
+  &.name {
+    transform: translate(-51%, 384px);
+
+    & .text {
+      &.transform {
+        transform: translate(10px, 15px);
+      }
+    }
+  }
+
+  & > p {
+    font-family: "DotGothic16", sans-serif;
+    color: $cWhite;
+    text-align: center;
+
+    & .char {
+      display: inline-block;
+      opacity: 0;
+
+      @include animation(
+        $name: kf-chars-animate,
+        $delay: 2.5s,
+        $duration: 1s,
+        $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+        $fill-mode: both
+      );
+
+      @for $i from 1 through 26 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.06s;
+        }
+      }
+    }
+  }
+  & .out {
+    transform: translate(52px, 4px);
+    background-color: $cBlack;
+    font-family: "DotGothic16", sans-serif;
+    color: $cWhite;
+    text-align: center;
+    border: none;
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  &.transform {
+    transition: all 0.5s;
+    transform: translate(-51%, 495px);
+    width: 700px;
+  }
+}
+
+@keyframes kf-chars-animate {
+  0% {
+    opacity: 0;
+    transform: translate(10px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(10px, 5px);
+  }
+}
