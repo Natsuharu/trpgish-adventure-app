@@ -17,3 +17,8 @@
     fill-mode: $fill-mode;
   }
 }
+
+$breakpoint: (
+  ip: "screen and(max-width: 480px)",
+  pc: "screen and(max-width: 1440px)",
+);
