@@ -1,5 +1,17 @@
 @use "variable" as *;
-@use "../mixin" as *;
+@use "mixin" as *;
+
+html {
+  @include mq(sp) {
+    font-size: 62.5%;
+  }
+  @include mq(tab) {
+    font-size: 75%;
+  }
+  @include mq(pc) {
+    font-size: 120%;
+  }
+}
 
 body {
   background-color: rgb(11, 11, 11, 27%);
