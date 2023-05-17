@@ -16,6 +16,12 @@ body {
 }
 
 .img-wrap {
+  // @media screen and(max-width: 480px) {
+  //   height: 385px;
+  //   width: 490px;
+  //   transform: translate(-23%, 95px);
+  // }
+
   position: absolute;
   height: 400px;
   width: 700px;
