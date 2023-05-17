@@ -15,14 +15,18 @@
   opacity: 0;
 }
 
-.ball {
+.ball-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.ball-wrapper .ball {
   background-color: black;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: auto;
   z-index: 1;
   animation-name: kf-bound;
   animation-duration: 1s;
@@ -35,29 +39,25 @@
 
 @keyframes kf-bound {
   0%, 100% {
-    top: 50%;
-    transform: scale(1);
+    transform: scale(1) translateY(15px);
   }
   30% {
-    top: 45%;
-    transform: scale(0.8, 1.1);
+    transform: scale(0.8, 1.1) translateY(0);
   }
   60% {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
   90% {
-    top: 50%;
-    transform: scale(1.2, 0.9);
+    transform: scale(1.2, 0.9) translateY(15px);
   }
 }
 .shadow {
   position: absolute;
+  top: 55%;
   background-color: black;
   width: 5rem;
   height: 1rem;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
   filter: blur(6px);
   z-index: 0;
   animation-name: kf-shadow-animation;
@@ -71,19 +71,18 @@
 
 @keyframes kf-shadow-animation {
   0%, 100% {
-    transform: translate(0%, 450%) scale(1);
+    transform: scale(1);
     filter: blur(6px);
   }
   30% {
-    transform: translate(0%, 450%) scale(1.2, 1);
+    transform: scale(1.2, 1);
     filter: blur(8px);
   }
 }
 .loading-animation {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(30%, 600%);
+  left: 45%;
+  transform: translate(-50%, 25%);
 }
 .loading-animation .char {
   display: inline-block;
@@ -128,20 +127,20 @@
 .progress-bar {
   width: 10rem;
   position: absolute;
-  top: 50%;
+  top: 61%;
   left: 50%;
-  transform: translate(-20%, 760%);
+  transform: translate(-50%, 50%);
   background-color: white;
   border: 5px solid black;
   padding: 3px;
   border-radius: 10px;
 }
-
-.bar {
+.progress-bar .bar {
   width: 100%;
   height: 100%;
   position: absolute;
-  transform: translate(-2%, -40%);
+  top: 10%;
+  left: 0%;
   background-color: orange;
   border-radius: 10px;
   opacity: 0;
@@ -162,6 +161,7 @@
   100% {
     opacity: 1;
     width: 100%;
+    transform: scale(1, 1);
   }
 }
 .triangle-animation {
@@ -176,20 +176,20 @@
   z-index: 2;
 }
 .triangle-animation.top {
-  border-color: rgb(126, 89, 166) transparent transparent transparent;
+  border-color: rgb(111, 202, 137) transparent transparent transparent;
   animation-name: kf-triangle-animation-top;
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.42, 0, 0.02, 1.01);
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0, 0.5, 0.49, 0.73);
   animation-delay: 2s;
   animation-iteration-count: 1;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
 }
 .triangle-animation.bottom {
-  border-color: transparent black transparent transparent;
+  border-color: transparent #d4eacd transparent transparent;
   animation-name: kf-triangle-animation-bottom;
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.42, 0, 0.02, 1.01);
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0, 0.5, 0.49, 0.73);
   animation-delay: 2s;
   animation-iteration-count: 1;
   animation-direction: alternate-reverse;
@@ -503,8 +503,24 @@ button.btn.hide {
     opacity: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media screen and (min-width: 1281px) {
+  html {
+    font-size: 120%;
+  }
+}
+
 body {
-  background-color: rgba(11, 11, 11, 0.27);
+  background-color: rgba(232, 225, 225, 0.9882352941);
 }
 
 .main-container {
