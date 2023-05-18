@@ -386,7 +386,7 @@ button.btn.hide {
   background-repeat: no-repeat;
   top: 50%;
   left: 50%;
-  width: 150px;
+  width: 8rem;
 }
 .chara.character-img {
   background-image: url(./image/character_yusha_01_red.png);
@@ -530,27 +530,54 @@ body {
 .main-container.inview {
   transition: opacity 4s;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
 }
 
 .img-wrap {
   position: absolute;
-  height: 400px;
-  width: 700px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 88px);
   overflow: hidden;
+  height: 30rem;
+}
+@media screen and (min-width: 1281px) {
+  .img-wrap {
+    width: 36rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .img-wrap {
+    height: 50rem;
+    width: 55rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .img-wrap {
+    width: 39rem;
+  }
 }
 .img-wrap .img {
   position: absolute;
-  height: 400px;
-  width: 700px;
+  height: 30rem;
   background-size: 700px;
   background-repeat: no-repeat;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -200px);
   opacity: 0.8;
+}
+@media screen and (min-width: 1281px) {
+  .img-wrap .img {
+    width: 36rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .img-wrap .img {
+    height: 50rem;
+    width: 55rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .img-wrap .img {
+    width: 39rem;
+  }
 }
 .img-wrap .img.back-img {
   background-image: url(./image/forest-1920.jpg);
@@ -566,7 +593,7 @@ body {
 }
 .img-wrap .img.back-img2 {
   background-image: url(./image/darkforest-1920.jpg);
-  transform: translate(50%, -200px);
+  transform: translate(50%, 0px);
 }
 .img-wrap .img.back-img2.transform {
   animation-name: infinity-scroll-left2;
