@@ -20,49 +20,52 @@
   }
 }
 
-.ball {
-  background-color: $cBlack;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  @include animation(
-    $name: kf-bound,
-    $iteration-count: infinite,
-    $timing-function: ease-in
-  );
+.ball-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  & .ball {
+    background-color: $cBlack;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: auto;
+    z-index: 1;
+
+    @include animation(
+      $name: kf-bound,
+      $iteration-count: infinite,
+      $timing-function: ease-in
+    );
+  }
 }
 
 @keyframes kf-bound {
   0%,
   100% {
-    top: 50%;
-    transform: scale(1);
+    transform: scale(1) translateY(15px);
   }
   30% {
-    top: 45%;
-    transform: scale(0.8, 1.1);
+    transform: scale(0.8, 1.1) translateY(0);
   }
   60% {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
   90% {
-    top: 50%;
-    transform: scale(1.2, 0.9);
+    transform: scale(1.2, 0.9) translateY(15px);
   }
 }
 
 .shadow {
   position: absolute;
+  top: 55%;
+
   background-color: $cBlack;
   width: 5rem;
   height: 1rem;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
   filter: blur(6px);
   z-index: 0;
   @include animation(
@@ -75,20 +78,25 @@
 @keyframes kf-shadow-animation {
   0%,
   100% {
-    transform: translate(0%, 450%) scale(1);
+    transform: scale(1);
     filter: blur(6px);
   }
   30% {
-    transform: translate(0%, 450%) scale(1.2, 1);
+    transform: scale(1.2, 1);
     filter: blur(8px);
   }
 }
 
 .loading-animation {
   position: absolute;
+<<<<<<< HEAD
   top: 50%;
   left: 50%;
   transform: translate(7%, 600%);
+=======
+  left: 45%;
+  transform: translate(-50%, 25%);
+>>>>>>> develop
 
   & .char {
     display: inline-block;
@@ -122,31 +130,38 @@
 .progress-bar {
   width: 10rem;
   position: absolute;
-  top: 50%;
+  top: 61%;
   left: 50%;
+<<<<<<< HEAD
   transform: translate(-24%, 760%);
+=======
+  transform: translate(-50%, 50%);
+>>>>>>> develop
   background-color: $cWhite;
   border: 5px solid $cBlack;
   padding: 3px;
   border-radius: 10px;
-}
 
-.bar {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translate(-2%, -40%);
-  background-color: $Bar_color;
-  border-radius: 10px;
-  opacity: 0;
+  & .bar {
+    width: 100%;
+    height: 100%;
 
-  @include animation(
-    $name: kf-bar-animation,
-    $delay: 1s,
-    $duration: 1s,
-    $timing-function: cubic-bezier(1, -0.02, 0.18, 0.99),
-    $iteration-count: normal
-  );
+    position: absolute;
+    top: 10%;
+    left: 0%;
+
+    background-color: $Bar_color;
+    border-radius: 10px;
+    opacity: 0;
+
+    @include animation(
+      $name: kf-bar-animation,
+      $delay: 1s,
+      $duration: 1s,
+      $timing-function: cubic-bezier(1, -0.02, 0.18, 0.99),
+      $iteration-count: normal
+    );
+  }
 }
 
 @keyframes kf-bar-animation {
@@ -157,6 +172,7 @@
   100% {
     opacity: 1;
     width: 100%;
+    transform: scale(1, 1);
   }
 }
 
@@ -176,19 +192,19 @@
     @include animation(
       $name: kf-triangle-animation-top,
       $delay: 2s,
-      $duration: 0.5s,
-      $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
+      $duration: 0.2s,
+      $timing-function: cubic-bezier(0, 0.5, 0.49, 0.73),
       $direction: alternate-reverse
     );
   }
 
   &.bottom {
-    border-color: transparent $cBlack transparent transparent;
+    border-color: transparent $triangle_color_bottom transparent transparent;
     @include animation(
       $name: kf-triangle-animation-bottom,
       $delay: 2s,
-      $duration: 0.5s,
-      $timing-function: cubic-bezier(0.42, 0, 0.02, 1.01),
+      $duration: 0.2s,
+      $timing-function: cubic-bezier(0, 0.5, 0.49, 0.73),
       $direction: alternate-reverse
     );
   }

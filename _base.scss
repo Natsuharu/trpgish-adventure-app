@@ -1,8 +1,23 @@
 @use "variable" as *;
 @use "mixin" as *;
+<<<<<<< HEAD
+=======
+
+html {
+  @include mq(sp) {
+    font-size: 62.5%;
+  }
+  @include mq(tab) {
+    font-size: 75%;
+  }
+  @include mq(pc) {
+    font-size: 120%;
+  }
+}
+>>>>>>> develop
 
 body {
-  background-color: rgb(11, 11, 11, 27%);
+  background-color: $body_color;
 }
 
 .main-container {
@@ -12,6 +27,9 @@ body {
   &.inview {
     transition: opacity 4s;
     opacity: 1;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 1rem;
   }
 }
 
@@ -23,23 +41,38 @@ body {
   // }
 
   position: absolute;
-  height: 400px;
-  width: 700px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 88px);
   overflow: hidden;
+  height: 30rem;
+
+  @include mq(pc) {
+    width: 36rem;
+  }
+  @include mq(tab) {
+    height: 50rem;
+    width: 55rem;
+  }
+  @include mq(sp) {
+    width: 39rem;
+  }
 
   & .img {
     position: absolute;
-    height: 400px;
-    width: 700px;
+    height: 30rem;
     background-size: 700px;
     background-repeat: no-repeat;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -200px);
     opacity: 0.8;
+
+    @include mq(pc) {
+      width: 36rem;
+    }
+    @include mq(tab) {
+      height: 50rem;
+      width: 55rem;
+    }
+    @include mq(sp) {
+      width: 39rem;
+    }
+
     &.back-img {
       background-image: url(./image/forest-1920.jpg);
 
@@ -56,7 +89,7 @@ body {
 
     &.back-img2 {
       background-image: url(./image/darkforest-1920.jpg);
-      transform: translate(50%, -200px);
+      transform: translate(50%, 0px);
 
       &.transform {
         @include animation(

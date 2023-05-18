@@ -19,13 +19,17 @@
   <body>
     <div class="wrap">
       <div class="container">
-        <div class="ball"></div>
-        <span class="shadow"></span>
-
-        <div class="progress-bar">
-          <span class="bar"></span>
+        <div class="ball-wrapper">
+          <div class="ball"></div>
+          <span class="shadow"></span>
         </div>
-        <div class="loading-animation">loading</div>
+
+        <div class="progress-wrapper">
+          <div class="progress-bar">
+            <span class="bar"></span>
+            <div class="loading-animation">loading</div>
+          </div>
+        </div>
 
         <div class="triangle-animation top"></div>
         <div class="triangle-animation bottom"></div>
@@ -35,10 +39,12 @@
         <div class="img-wrap">
           <div class="back-img img"></div>
           <div class="back-img2 img"></div>
-          <div class="back-img3 img"></div>
         </div>
-        <div class="character-img chara"></div>
-        <div class="character-img2 chara"></div>
+        <div class="chara-wrapper">
+          <div class="character-img chara"></div>
+          <div class="character-img2 chara"></div>
+        </div>
+
         <button class="start-btn btn">はじめる</button>
         <div class="text-box name">
           <p class="text">▼名前を入力してください</p>
