@@ -89,14 +89,8 @@
 
 .loading-animation {
   position: absolute;
-<<<<<<< HEAD
-  top: 50%;
-  left: 50%;
-  transform: translate(7%, 600%);
-=======
   left: 45%;
   transform: translate(-50%, 25%);
->>>>>>> develop
 
   & .char {
     display: inline-block;
@@ -132,11 +126,8 @@
   position: absolute;
   top: 61%;
   left: 50%;
-<<<<<<< HEAD
-  transform: translate(-24%, 760%);
-=======
   transform: translate(-50%, 50%);
->>>>>>> develop
+
   background-color: $cWhite;
   border: 5px solid $cBlack;
   padding: 3px;

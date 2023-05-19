@@ -19,11 +19,6 @@
 }
 
 $breakpoint: (
-<<<<<<< HEAD
-  ip: "screen and(max-width: 480px)",
-  pc: "screen and(max-width: 1440px)",
-);
-=======
   sp: "screen and (max-width: 768px)",
   tab: "screen and (min-width: 769px) and (max-width: 1280px)",
   pc: "screen and (min-width: 1281px)",
@@ -34,4 +29,3 @@ $breakpoint: (
     @content;
   }
 }
->>>>>>> develop

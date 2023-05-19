@@ -1,7 +1,5 @@
 @use "variable" as *;
 @use "mixin" as *;
-<<<<<<< HEAD
-=======
 
 html {
   @include mq(sp) {
@@ -14,7 +12,6 @@ html {
     font-size: 120%;
   }
 }
->>>>>>> develop
 
 body {
   background-color: $body_color;
