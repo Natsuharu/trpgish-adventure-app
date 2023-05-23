@@ -18,53 +18,65 @@ body {
 }
 
 .main-container {
+  opacity: 0;
   position: absolute;
   width: 100vw;
 
   &.inview {
-    position: absolute;
     top: 0;
     transition: opacity 4s;
     opacity: 1;
     display: flex;
     justify-content: center;
-    margin: 2rem 1rem;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
   }
 }
 
-.img-wrap {
+.main-wrapper {
   position: absolute;
-  overflow: hidden;
-  height: 30rem;
-
+  justify-content: center;
+  display: flex;
   @include mq(pc) {
-    width: 36rem;
+    width: 39rem;
+    height: 24.3rem;
   }
   @include mq(tab) {
-    height: 50rem;
+    height: 39rem;
     width: 55rem;
   }
   @include mq(sp) {
     width: 39rem;
+    height: 30rem;
   }
+}
+
+.img-wrapper {
+  // position: absolute;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+  // @include mq(pc) {
+  //   width: 39rem;
+  //   height: 24.3rem;
+  // }
+  // @include mq(tab) {
+  //   height: 39rem;
+  //   width: 55rem;
+  // }
+  // @include mq(sp) {
+  //   width: 39rem;
+  //   height: 30rem;
+  // }
 
   & .img {
-    position: absolute;
-    height: 30rem;
     background-size: 700px;
     background-repeat: no-repeat;
     opacity: 0.8;
-
-    @include mq(pc) {
-      width: 36rem;
-    }
-    @include mq(tab) {
-      height: 50rem;
-      width: 55rem;
-    }
-    @include mq(sp) {
-      width: 39rem;
-    }
+    width: 100%;
+    height: 100%;
 
     &.back-img {
       background-image: url(./image/forest-1920.jpg);

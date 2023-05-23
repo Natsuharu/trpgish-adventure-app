@@ -36,6 +36,19 @@
       width: 280px;
       height: 115px;
       transform: translate(-307px, -5px);
+
+      @include mq(pc) {
+        width: 39rem;
+        height: 24.3rem;
+      }
+      @include mq(tab) {
+        height: 39rem;
+        width: 55rem;
+      }
+      @include mq(sp) {
+        width: 39rem;
+        height: 30rem;
+      }
     }
 
     &.enemy {
