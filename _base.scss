@@ -53,23 +53,9 @@ body {
 }
 
 .img-wrapper {
-  // position: absolute;
   overflow: hidden;
-
   width: 100%;
   height: 100%;
-  // @include mq(pc) {
-  //   width: 39rem;
-  //   height: 24.3rem;
-  // }
-  // @include mq(tab) {
-  //   height: 39rem;
-  //   width: 55rem;
-  // }
-  // @include mq(sp) {
-  //   width: 39rem;
-  //   height: 30rem;
-  // }
 
   & .img {
     background-size: 700px;

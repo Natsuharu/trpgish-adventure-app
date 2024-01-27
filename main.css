@@ -216,6 +216,12 @@
     border-width: 100vh 100vw 100vh 0;
   }
 }
+.btn-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 button {
   position: absolute;
   top: 50%;
@@ -232,7 +238,7 @@ button:hover {
   box-shadow: none;
 }
 button.start-btn {
-  transform: translate(-67%, 337px);
+  transform: translate(-70%, 8rem);
 }
 button.status-btn {
   transform: translate(-62%, -102px);
@@ -255,7 +261,7 @@ button.btn.hide {
   border: 3px solid white;
 }
 .text-box.name {
-  transform: translate(-51%, 384px);
+  transform: translate(-50%, 12rem);
 }
 .text-box.name .text.transform {
   transform: translate(10px, 15px);
@@ -629,8 +635,18 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-48%, 558px);
+  height: auto;
   background-color: black;
+}
+@media screen and (min-width: 1281px) {
+  .status-container {
+    width: 31.3rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .status-container {
+    width: 42.6rem;
+  }
 }
 .status-container.transform {
   transition: all 0.5s;
@@ -654,20 +670,18 @@ body {
   margin: 10px 10px 10px 14px;
 }
 .status-container .screen.condition {
-  width: 280px;
-  height: 115px;
   transform: translate(-307px, -5px);
 }
 @media screen and (min-width: 1281px) {
   .status-container .screen.condition {
-    width: 39rem;
-    height: 24.3rem;
+    width: 14rem;
+    height: 7.5rem;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.condition {
-    height: 39rem;
-    width: 55rem;
+    height: 9rem;
+    width: 20rem;
   }
 }
 @media screen and (max-width: 768px) {

@@ -14,7 +14,8 @@
   border: 3px solid $cWhite;
 
   &.name {
-    transform: translate(-51%, 384px);
+    // transform: translate(-51%, 384px);
+    transform: translate(-50%, 12rem);
 
     & .text {
       &.transform {
