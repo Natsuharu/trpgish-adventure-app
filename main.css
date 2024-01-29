@@ -218,30 +218,28 @@
 }
 .btn-wrapper {
   width: 100%;
-  height: 100%;
   position: absolute;
 }
 
 button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   padding: 10px 20px;
-  margin: 0 18px;
   font-family: "DotGothic16", sans-serif;
   transition: all 0.5s;
   border-radius: 5px;
   box-shadow: 3px 3px 0px 0px black;
   background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 71%;
 }
 button:hover {
   box-shadow: none;
 }
 button.start-btn {
-  transform: translate(-70%, 8rem);
+  transform: translate(154%, -212%);
 }
 button.status-btn {
-  transform: translate(-62%, -102px);
+  transform: translate(187%, 131%);
 }
 button.btn.hide {
   transition: all 0.2s;
@@ -250,18 +248,13 @@ button.btn.hide {
 
 .text-box {
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   background: black;
-  width: 275px;
-  height: 65px;
-  margin: 10px;
   border-radius: 10px;
   border: 3px solid white;
 }
 .text-box.name {
-  transform: translate(-50%, 12rem);
+  transform: translate(-9%, 14%);
+  padding: 1%;
 }
 .text-box.name .text.transform {
   transform: translate(10px, 15px);
@@ -361,7 +354,7 @@ button.btn.hide {
   animation-delay: 1.56s;
 }
 .text-box .out {
-  transform: translate(52px, 4px);
+  transform: translate(26%, 5%);
   background-color: black;
   font-family: "DotGothic16", sans-serif;
   color: white;
@@ -560,8 +553,8 @@ body {
 }
 @media screen and (min-width: 1281px) {
   .main-wrapper {
-    width: 39rem;
-    height: 24.3rem;
+    width: 49.6%;
+    height: 49.6%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
@@ -632,11 +625,9 @@ body {
   }
 }
 .status-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
 }
 @media screen and (min-width: 1281px) {
   .status-container {
@@ -656,7 +647,6 @@ body {
   background: black;
   border-radius: 10px;
   border: 3px solid white;
-  position: absolute;
 }
 .status-container .screen p,
 .status-container .screen div {
@@ -670,7 +660,7 @@ body {
   margin: 10px 10px 10px 14px;
 }
 .status-container .screen.condition {
-  transform: translate(-307px, -5px);
+  transform: translate(-102%, 98%);
 }
 @media screen and (min-width: 1281px) {
   .status-container .screen.condition {
@@ -746,6 +736,7 @@ table {
   letter-spacing: 1px;
   font-family: "DotGothic16", sans-serif;
   color: white;
+  background-color: black;
 }
 table th {
   border: 3px solid white;

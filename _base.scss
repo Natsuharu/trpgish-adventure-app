@@ -39,8 +39,8 @@ body {
   justify-content: center;
   display: flex;
   @include mq(pc) {
-    width: 39rem;
-    height: 24.3rem;
+    width: 49.6%;
+    height: 49.6%;
   }
   @include mq(tab) {
     height: 39rem;
