@@ -36,42 +36,33 @@
       </div>
 
       <div class="main-container">
-        <div class="img-wrap">
-          <div class="back-img img"></div>
-          <div class="back-img2 img"></div>
-        </div>
-        <div class="chara-wrapper">
-          <div class="character-img chara"></div>
-          <div class="character-img2 chara"></div>
-        </div>
+        <div class="main-wrapper">
+          <div class="img-wrapper">
+            <div class="back-img img"></div>
+            <div class="back-img2 img"></div>
+          </div>
 
-        <button class="start-btn btn">はじめる</button>
-        <div class="text-box name">
-          <p class="text">▼名前を入力してください</p>
-          <input
-            type="text"
-            maxlength="6"
-            placeholder="6文字まで入力可能"
-            class="out"
-          />
+          <div class="chara-wrapper">
+            <div class="character-img chara"></div>
+            <div class="character-img2 chara"></div>
+          </div>
+
+          <div class="btn-wrapper">
+            <button class="status-btn btn">ステータスを振る</button>
+            <button class="start-btn btn">はじめる</button>
+            <div class="text-box name">
+              <p class="text">▼名前を入力してください</p>
+              <input
+                type="text"
+                maxlength="6"
+                placeholder="6文字まで入力可能"
+                class="out"
+              />
+            </div>
+          </div>
         </div>
 
         <div class="status-container">
-          <div class="screen condition">
-            <div>
-              なまえ
-              <p class="character-name"></p>
-            </div>
-            <div class="hp">
-              HP
-              <p class="health"></p>
-            </div>
-            <div class="mp">
-              MP
-              <p class="mental"></p>
-            </div>
-          </div>
-
           <div class="screen enemy">
             <div>
               なまえ
@@ -110,7 +101,22 @@
               <p class="rate"></p>
             </div>
           </div>
-          <button class="status-btn btn">ステータスを振る</button>
+
+          <div class="screen condition">
+            <div>
+              なまえ
+              <p class="character-name"></p>
+            </div>
+            <div class="hp">
+              HP
+              <p class="health"></p>
+            </div>
+            <div class="mp">
+              MP
+              <p class="mental"></p>
+            </div>
+          </div>
+
           <table class="status">
             <tr>
               <th class="titl-str">

@@ -2,22 +2,26 @@
 @use "variable" as *;
 
 .status-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-48%, 558px);
-  background-color: $cBlack;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+
+  @include mq(pc) {
+    width: 31.3rem;
+  }
+  @include mq(tab) {
+    width: 42.6rem;
+  }
 
   &.transform {
     transition: all 0.5s;
-    transform: translate(-48%, 635px);
+    transform: translate(0%, 0%);
   }
 
   & .screen {
     background: $cBlack;
     border-radius: 10px;
     border: 3px solid $cWhite;
-    position: absolute;
 
     & p,
     div {
@@ -33,15 +37,26 @@
     }
 
     &.condition {
-      width: 280px;
-      height: 115px;
-      transform: translate(-307px, -5px);
+      transform: translate(-123%, -27%);
+
+      @include mq(pc) {
+        width: 14rem;
+        height: 7.5rem;
+      }
+      @include mq(tab) {
+        height: 9rem;
+        width: 20rem;
+      }
+      @include mq(sp) {
+        width: 39rem;
+        height: 30rem;
+      }
     }
 
     &.enemy {
-      width: 206px;
-      height: 115px;
-      transform: translate(536px, -289px);
+      width: 34%;
+      height: auto;
+      transform: translate(278%, 171%);
       opacity: 0;
 
       &.inview {
@@ -51,8 +66,8 @@
 
     &.action-choice {
       width: 145px;
-      height: 115px;
-      transform: translate(-307px, -128px);
+      height: auto;
+      transform: translate(-144%, 98%);
       opacity: 0;
 
       &.inview {
@@ -70,26 +85,26 @@
           border-style: solid;
           border-width: 13px 13px 0 0;
           border-color: transparent $cWhite transparent transparent;
-          transform: translate(-90px, 5px) rotate(-45deg);
+          transform: translate(-782%, 50%) rotate(-45deg);
         }
 
         &#magic {
           & .choice {
-            transform: translate(-75px, 5px) rotate(-45deg);
+            transform: translate(-639%, 50%) rotate(-45deg);
           }
         }
 
         &#deathblow {
           & .choice {
-            transform: translate(-75px, 5px) rotate(-45deg);
+            transform: translate(-639%, 50%) rotate(-45deg);
           }
         }
       }
     }
     &.ability {
-      width: 222px;
-      height: 148px;
-      transform: translate(-307px, -281px);
+      width: 50%;
+      height: auto;
+      transform: translate(-121%, -103%);
       opacity: 0;
 
       &.inview {
@@ -109,6 +124,8 @@ table {
   letter-spacing: 1px;
   font-family: "DotGothic16", sans-serif;
   color: $cWhite;
+  background-color: $cBlack;
+  transform: translate(0%, -47%);
 
   & th {
     border: 3px solid $cWhite;
@@ -116,7 +133,7 @@ table {
   }
   & td {
     border: 3px solid $cWhite;
-    padding: 20px;
+    padding: 22.5px;
     text-align: center;
   }
 }
@@ -149,31 +166,31 @@ table {
   }
 
   &.detail-str {
-    transform: translate(-322px, -111px);
+    transform: translate(-218%, -206%);
   }
 
   &.detail-con {
-    transform: translate(-254px, -111px);
+    transform: translate(-170%, -206%);
   }
 
   &.detail-siz {
-    transform: translate(-188px, -111px);
+    transform: translate(-122%, -206%);
   }
 
   &.detail-dex {
-    transform: translate(-102px, -111px);
+    transform: translate(-72%, -206%);
   }
   &.detail-app {
-    transform: translate(-36px, -111px);
+    transform: translate(-27%, -206%);
   }
   &.detail-int {
-    transform: translate(33px, -111px);
+    transform: translate(24%, -206%);
   }
   &.detail-pow {
-    transform: translate(104px, -111px);
+    transform: translate(72%, -206%);
   }
   &.detail-edu {
-    transform: translate(174px, -111px);
+    transform: translate(121%, -206%);
   }
 }
 
