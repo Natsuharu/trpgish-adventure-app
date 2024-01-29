@@ -19,7 +19,7 @@
     height: 14rem;
     background-size: 13rem;
     top: 50%;
-    transform: translate(0, -50%);
+    // transform: translate(0, -50%);
 
     @include animation(
       $name: kf-up-down,
@@ -46,7 +46,7 @@
     height: 120px;
 
     background-size: 150px;
-    transform: translate(50%, 366px);
+    transform: translate(85%, 280%);
     opacity: 0;
 
     &.inview {
@@ -73,36 +73,36 @@
 
 @keyframes kf-start-up-down {
   0% {
-    transform: translateY(-50%, 145px);
+    transform: translate(0, -50%);
   }
   100% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
   }
 }
 
 @keyframes kf-hero-death {
   0% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   10% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
   20% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   30% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
   40% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   100% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
 }

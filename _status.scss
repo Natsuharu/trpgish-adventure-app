@@ -15,7 +15,7 @@
 
   &.transform {
     transition: all 0.5s;
-    transform: translate(-48%, 635px);
+    transform: translate(0%, 0%);
   }
 
   & .screen {
@@ -37,7 +37,7 @@
     }
 
     &.condition {
-      transform: translate(-102%, 98%);
+      transform: translate(-123%, -27%);
 
       @include mq(pc) {
         width: 14rem;
@@ -54,9 +54,9 @@
     }
 
     &.enemy {
-      width: 206px;
-      height: 115px;
-      transform: translate(536px, -289px);
+      width: 34%;
+      height: auto;
+      transform: translate(278%, 171%);
       opacity: 0;
 
       &.inview {
@@ -66,8 +66,8 @@
 
     &.action-choice {
       width: 145px;
-      height: 115px;
-      transform: translate(-307px, -128px);
+      height: auto;
+      transform: translate(-144%, 98%);
       opacity: 0;
 
       &.inview {
@@ -85,26 +85,26 @@
           border-style: solid;
           border-width: 13px 13px 0 0;
           border-color: transparent $cWhite transparent transparent;
-          transform: translate(-90px, 5px) rotate(-45deg);
+          transform: translate(-782%, 50%) rotate(-45deg);
         }
 
         &#magic {
           & .choice {
-            transform: translate(-75px, 5px) rotate(-45deg);
+            transform: translate(-639%, 50%) rotate(-45deg);
           }
         }
 
         &#deathblow {
           & .choice {
-            transform: translate(-75px, 5px) rotate(-45deg);
+            transform: translate(-639%, 50%) rotate(-45deg);
           }
         }
       }
     }
     &.ability {
-      width: 222px;
-      height: 148px;
-      transform: translate(-307px, -281px);
+      width: 50%;
+      height: auto;
+      transform: translate(-121%, -103%);
       opacity: 0;
 
       &.inview {
@@ -125,6 +125,7 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: $cWhite;
   background-color: $cBlack;
+  transform: translate(0%, -47%);
 
   & th {
     border: 3px solid $cWhite;
@@ -165,31 +166,31 @@ table {
   }
 
   &.detail-str {
-    transform: translate(-218%, 157%);
+    transform: translate(-218%, -206%);
   }
 
   &.detail-con {
-    transform: translate(-170%, 157%);
+    transform: translate(-170%, -206%);
   }
 
   &.detail-siz {
-    transform: translate(-122%, 157%);
+    transform: translate(-122%, -206%);
   }
 
   &.detail-dex {
-    transform: translate(-72%, 157%);
+    transform: translate(-72%, -206%);
   }
   &.detail-app {
-    transform: translate(-27%, 157%);
+    transform: translate(-27%, -206%);
   }
   &.detail-int {
-    transform: translate(24%, 157%);
+    transform: translate(24%, -206%);
   }
   &.detail-pow {
-    transform: translate(72%, 157%);
+    transform: translate(72%, -206%);
   }
   &.detail-edu {
-    transform: translate(121%, 157%);
+    transform: translate(121%, -206%);
   }
 }
 

@@ -366,8 +366,8 @@ button.btn.hide {
 }
 .text-box.transform {
   transition: all 0.5s;
-  transform: translate(-51%, 495px);
-  width: 700px;
+  transform: translate(0%, -79%);
+  width: 100%;
 }
 
 @keyframes kf-chars-animate {
@@ -399,7 +399,6 @@ button.btn.hide {
   height: 14rem;
   background-size: 13rem;
   top: 50%;
-  transform: translate(0, -50%);
   animation-name: kf-up-down;
   animation-duration: 0.7s;
   animation-timing-function: ease;
@@ -430,7 +429,7 @@ button.btn.hide {
   background-image: url(./image/character_monster_slime_green.png);
   height: 120px;
   background-size: 150px;
-  transform: translate(50%, 366px);
+  transform: translate(85%, 280%);
   opacity: 0;
 }
 .chara.character-img2.inview {
@@ -458,35 +457,35 @@ button.btn.hide {
 }
 @keyframes kf-start-up-down {
   0% {
-    transform: translateY(-50%, 145px);
+    transform: translate(0, -50%);
   }
   100% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
   }
 }
 @keyframes kf-hero-death {
   0% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   10% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
   20% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   30% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
   40% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 1;
   }
   100% {
-    transform: translate(-221%, 322px);
+    transform: translate(-83%, -13%);
     opacity: 0;
   }
 }
@@ -646,7 +645,7 @@ body {
 }
 .status-container.transform {
   transition: all 0.5s;
-  transform: translate(-48%, 635px);
+  transform: translate(0%, 0%);
 }
 .status-container .screen {
   background: black;
@@ -665,7 +664,7 @@ body {
   margin: 10px 10px 10px 14px;
 }
 .status-container .screen.condition {
-  transform: translate(-102%, 98%);
+  transform: translate(-123%, -27%);
 }
 @media screen and (min-width: 1281px) {
   .status-container .screen.condition {
@@ -686,9 +685,9 @@ body {
   }
 }
 .status-container .screen.enemy {
-  width: 206px;
-  height: 115px;
-  transform: translate(536px, -289px);
+  width: 34%;
+  height: auto;
+  transform: translate(278%, 171%);
   opacity: 0;
 }
 .status-container .screen.enemy.inview {
@@ -696,8 +695,8 @@ body {
 }
 .status-container .screen.action-choice {
   width: 145px;
-  height: 115px;
-  transform: translate(-307px, -128px);
+  height: auto;
+  transform: translate(-144%, 98%);
   opacity: 0;
 }
 .status-container .screen.action-choice.inview {
@@ -714,18 +713,18 @@ body {
   border-style: solid;
   border-width: 13px 13px 0 0;
   border-color: transparent white transparent transparent;
-  transform: translate(-90px, 5px) rotate(-45deg);
+  transform: translate(-782%, 50%) rotate(-45deg);
 }
 .status-container .screen.action-choice p#magic .choice {
-  transform: translate(-75px, 5px) rotate(-45deg);
+  transform: translate(-639%, 50%) rotate(-45deg);
 }
 .status-container .screen.action-choice p#deathblow .choice {
-  transform: translate(-75px, 5px) rotate(-45deg);
+  transform: translate(-639%, 50%) rotate(-45deg);
 }
 .status-container .screen.ability {
-  width: 222px;
-  height: 148px;
-  transform: translate(-307px, -281px);
+  width: 50%;
+  height: auto;
+  transform: translate(-121%, -103%);
   opacity: 0;
 }
 .status-container .screen.ability.inview {
@@ -742,6 +741,7 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: white;
   background-color: black;
+  transform: translate(0%, -47%);
 }
 table th {
   border: 3px solid white;
@@ -780,28 +780,28 @@ table td {
   content: " ";
 }
 .tooltip.detail-str {
-  transform: translate(-218%, 157%);
+  transform: translate(-218%, -206%);
 }
 .tooltip.detail-con {
-  transform: translate(-170%, 157%);
+  transform: translate(-170%, -206%);
 }
 .tooltip.detail-siz {
-  transform: translate(-122%, 157%);
+  transform: translate(-122%, -206%);
 }
 .tooltip.detail-dex {
-  transform: translate(-72%, 157%);
+  transform: translate(-72%, -206%);
 }
 .tooltip.detail-app {
-  transform: translate(-27%, 157%);
+  transform: translate(-27%, -206%);
 }
 .tooltip.detail-int {
-  transform: translate(24%, 157%);
+  transform: translate(24%, -206%);
 }
 .tooltip.detail-pow {
-  transform: translate(72%, 157%);
+  transform: translate(72%, -206%);
 }
 .tooltip.detail-edu {
-  transform: translate(121%, 157%);
+  transform: translate(121%, -206%);
 }
 
 .titl-str:hover .detail-str {
