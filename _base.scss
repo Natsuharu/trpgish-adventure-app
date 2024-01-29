@@ -34,17 +34,7 @@ body {
   }
 }
 
-<<<<<<< HEAD
-.img-wrap {
-  // @media screen and(max-width: 480px) {
-  //   height: 385px;
-  //   width: 490px;
-  //   transform: translate(-23%, 95px);
-  // }
-
-=======
 .main-wrapper {
->>>>>>> feature/create
   position: absolute;
   justify-content: center;
   display: flex;
@@ -65,7 +55,8 @@ body {
 .img-wrapper {
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  // height: 100%;
+  height: 122%;
   margin-top: 5%;
 
   & .img {
