@@ -40,14 +40,10 @@
       transform: translate(-102%, 98%);
 
       @include mq(pc) {
-        // width: 39rem;
-        // height: 24.3rem;
         width: 14rem;
         height: 7.5rem;
       }
       @include mq(tab) {
-        // height: 39rem;
-        // width: 55rem;
         height: 9rem;
         width: 20rem;
       }
@@ -136,7 +132,7 @@ table {
   }
   & td {
     border: 3px solid $cWhite;
-    padding: 20px;
+    padding: 22.5px;
     text-align: center;
   }
 }
@@ -169,31 +165,31 @@ table {
   }
 
   &.detail-str {
-    transform: translate(-322px, -111px);
+    transform: translate(-218%, 157%);
   }
 
   &.detail-con {
-    transform: translate(-254px, -111px);
+    transform: translate(-170%, 157%);
   }
 
   &.detail-siz {
-    transform: translate(-188px, -111px);
+    transform: translate(-122%, 157%);
   }
 
   &.detail-dex {
-    transform: translate(-102px, -111px);
+    transform: translate(-72%, 157%);
   }
   &.detail-app {
-    transform: translate(-36px, -111px);
+    transform: translate(-27%, 157%);
   }
   &.detail-int {
-    transform: translate(33px, -111px);
+    transform: translate(24%, 157%);
   }
   &.detail-pow {
-    transform: translate(104px, -111px);
+    transform: translate(72%, 157%);
   }
   &.detail-edu {
-    transform: translate(174px, -111px);
+    transform: translate(121%, 157%);
   }
 }
 

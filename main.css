@@ -554,7 +554,7 @@ body {
 @media screen and (min-width: 1281px) {
   .main-wrapper {
     width: 49.6%;
-    height: 49.6%;
+    height: 46.6%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
@@ -574,9 +574,10 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  margin-top: 5%;
 }
 .img-wrapper .img {
-  background-size: 700px;
+  background-size: 100%;
   background-repeat: no-repeat;
   opacity: 0.8;
   width: 100%;
@@ -584,6 +585,7 @@ body {
 }
 .img-wrapper .img.back-img {
   background-image: url(./image/forest-1920.jpg);
+  float: left;
 }
 .img-wrapper .img.back-img.transform {
   animation-name: infinity-scroll-left;
@@ -597,6 +599,9 @@ body {
 .img-wrapper .img.back-img2 {
   background-image: url(./image/darkforest-1920.jpg);
   transform: translate(50%, 0px);
+  float: right;
+  margin-top: -34%;
+  margin-right: -50%;
 }
 .img-wrapper .img.back-img2.transform {
   animation-name: infinity-scroll-left2;
@@ -744,7 +749,7 @@ table th {
 }
 table td {
   border: 3px solid white;
-  padding: 20px;
+  padding: 22.5px;
   text-align: center;
 }
 
@@ -775,28 +780,28 @@ table td {
   content: " ";
 }
 .tooltip.detail-str {
-  transform: translate(-322px, -111px);
+  transform: translate(-218%, 157%);
 }
 .tooltip.detail-con {
-  transform: translate(-254px, -111px);
+  transform: translate(-170%, 157%);
 }
 .tooltip.detail-siz {
-  transform: translate(-188px, -111px);
+  transform: translate(-122%, 157%);
 }
 .tooltip.detail-dex {
-  transform: translate(-102px, -111px);
+  transform: translate(-72%, 157%);
 }
 .tooltip.detail-app {
-  transform: translate(-36px, -111px);
+  transform: translate(-27%, 157%);
 }
 .tooltip.detail-int {
-  transform: translate(33px, -111px);
+  transform: translate(24%, 157%);
 }
 .tooltip.detail-pow {
-  transform: translate(104px, -111px);
+  transform: translate(72%, 157%);
 }
 .tooltip.detail-edu {
-  transform: translate(174px, -111px);
+  transform: translate(121%, 157%);
 }
 
 .titl-str:hover .detail-str {
