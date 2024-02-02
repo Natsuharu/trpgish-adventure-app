@@ -4,7 +4,6 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
   display: flex;
   justify-content: center;
 }
@@ -19,7 +18,6 @@
     height: 14rem;
     background-size: 13rem;
     top: 50%;
-    // transform: translate(0, -50%);
 
     @include animation(
       $name: kf-up-down,
@@ -46,7 +44,7 @@
     height: 120px;
 
     background-size: 150px;
-    transform: translate(85%, 280%);
+    transform: translate(85%, 200%);
     opacity: 0;
 
     &.inview {
@@ -76,7 +74,7 @@
     transform: translate(0, -50%);
   }
   100% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
   }
 }
 

@@ -38,26 +38,31 @@ body {
   position: absolute;
   justify-content: center;
   display: flex;
-  @include mq(pc) {
-    width: 49.6%;
-    height: 46.6%;
-  }
-  @include mq(tab) {
-    height: 39rem;
-    width: 55rem;
-  }
-  @include mq(sp) {
-    width: 39rem;
-    height: 30rem;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 93px;
+  width: 600px;
+  height: 360px;
 }
+
+// @include mq(pc) {
+//   width: 600px;
+//   height: 360px;
+// }
+// @include mq(tab) {
+//   height: 39rem;
+//   width: 55rem;
+// }
+// @include mq(sp) {
+//   width: 39rem;
+//   height: 30rem;
+// }
+// }
 
 .img-wrapper {
   overflow: hidden;
   width: 100%;
-  // height: 100%;
-  height: 122%;
-  margin-top: 5%;
+  height: auto;
 
   & .img {
     background-size: 100%;
@@ -83,10 +88,9 @@ body {
 
     &.back-img2 {
       background-image: url(./image/darkforest-1920.jpg);
-      transform: translate(50%, 0px);
+      transform: translate(100%, -100%);
       float: right;
-      margin-top: -34%;
-      margin-right: -50%;
+
       &.transform {
         @include animation(
           $name: infinity-scroll-left2,
@@ -102,18 +106,18 @@ body {
 
 @keyframes infinity-scroll-left {
   0% {
-    transform: translate(-50%, -200px);
+    transform: translate(0%, 0%);
   }
   100% {
-    transform: translate(-150%, -200px);
+    transform: translate(-100%, 0%);
   }
 }
 
 @keyframes infinity-scroll-left2 {
   0% {
-    transform: translate(50%, -200px);
+    transform: translate(100%, -100%);
   }
   100% {
-    transform: translate(-50%, -200px);
+    transform: translate(0%, -100%);
   }
 }

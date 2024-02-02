@@ -2,9 +2,8 @@
 
 .btn-wrapper {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
-  margin-top: 54%;
 }
 
 button {
@@ -14,20 +13,17 @@ button {
   border-radius: 5px;
   box-shadow: 3px 3px 0px 0px $cBlack;
   background-color: $cWhite;
-  margin-right: auto;
-  margin-left: auto;
-  // margin-top: 71%;
 
   &:hover {
     box-shadow: none;
   }
 
   &.start-btn {
-    transform: translate(154%, -212%);
+    transform: translate(101%, 655%);
   }
 
   &.status-btn {
-    transform: translate(187%, 131%);
+    transform: translate(157%, 960%);
   }
 
   &.btn {

@@ -218,9 +218,8 @@
 }
 .btn-wrapper {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
-  margin-top: 54%;
 }
 
 button {
@@ -230,17 +229,15 @@ button {
   border-radius: 5px;
   box-shadow: 3px 3px 0px 0px black;
   background-color: white;
-  margin-right: auto;
-  margin-left: auto;
 }
 button:hover {
   box-shadow: none;
 }
 button.start-btn {
-  transform: translate(154%, -212%);
+  transform: translate(101%, 655%);
 }
 button.status-btn {
-  transform: translate(187%, 131%);
+  transform: translate(157%, 960%);
 }
 button.btn.hide {
   transition: all 0.2s;
@@ -254,11 +251,11 @@ button.btn.hide {
   border: 3px solid white;
 }
 .text-box.name {
-  transform: translate(-9%, 14%);
+  transform: translate(-30%, 485%);
   padding: 1%;
 }
 .text-box.name .text.transform {
-  transform: translate(10px, 15px);
+  transform: translate(0%, 28%);
 }
 .text-box > p {
   font-family: "DotGothic16", sans-serif;
@@ -367,7 +364,7 @@ button.btn.hide {
 }
 .text-box.transform {
   transition: all 0.5s;
-  transform: translate(0%, -31%);
+  transform: translate(0%, 426%);
   width: 100%;
 }
 
@@ -385,7 +382,6 @@ button.btn.hide {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
   display: flex;
   justify-content: center;
 }
@@ -430,7 +426,7 @@ button.btn.hide {
   background-image: url(./image/character_monster_slime_green.png);
   height: 120px;
   background-size: 150px;
-  transform: translate(85%, 280%);
+  transform: translate(85%, 200%);
   opacity: 0;
 }
 .chara.character-img2.inview {
@@ -461,7 +457,7 @@ button.btn.hide {
     transform: translate(0, -50%);
   }
   100% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
   }
 }
 @keyframes kf-hero-death {
@@ -550,31 +546,17 @@ body {
   position: absolute;
   justify-content: center;
   display: flex;
-}
-@media screen and (min-width: 1281px) {
-  .main-wrapper {
-    width: 49.6%;
-    height: 46.6%;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1280px) {
-  .main-wrapper {
-    height: 39rem;
-    width: 55rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .main-wrapper {
-    width: 39rem;
-    height: 30rem;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 93px;
+  width: 600px;
+  height: 360px;
 }
 
 .img-wrapper {
   overflow: hidden;
   width: 100%;
-  height: 122%;
-  margin-top: 5%;
+  height: auto;
 }
 .img-wrapper .img {
   background-size: 100%;
@@ -598,10 +580,8 @@ body {
 }
 .img-wrapper .img.back-img2 {
   background-image: url(./image/darkforest-1920.jpg);
-  transform: translate(50%, 0px);
+  transform: translate(100%, -100%);
   float: right;
-  margin-top: -34%;
-  margin-right: -50%;
 }
 .img-wrapper .img.back-img2.transform {
   animation-name: infinity-scroll-left2;
@@ -615,18 +595,18 @@ body {
 
 @keyframes infinity-scroll-left {
   0% {
-    transform: translate(-50%, -200px);
+    transform: translate(0%, 0%);
   }
   100% {
-    transform: translate(-150%, -200px);
+    transform: translate(-100%, 0%);
   }
 }
 @keyframes infinity-scroll-left2 {
   0% {
-    transform: translate(50%, -200px);
+    transform: translate(100%, -100%);
   }
   100% {
-    transform: translate(-50%, -200px);
+    transform: translate(0%, -100%);
   }
 }
 .status-container {
@@ -645,7 +625,6 @@ body {
 }
 .status-container.transform {
   transition: all 0.5s;
-  transform: translate(0%, 0%);
 }
 .status-container .screen {
   background: black;
@@ -664,7 +643,7 @@ body {
   margin: 10px 10px 10px 14px;
 }
 .status-container .screen.condition {
-  transform: translate(-123%, -27%);
+  transform: translate(-100%, -27%);
 }
 @media screen and (min-width: 1281px) {
   .status-container .screen.condition {
@@ -687,7 +666,7 @@ body {
 .status-container .screen.enemy {
   width: 34%;
   height: auto;
-  transform: translate(278%, 171%);
+  transform: translate(294%, 244%);
   opacity: 0;
 }
 .status-container .screen.enemy.inview {
@@ -696,7 +675,7 @@ body {
 .status-container .screen.action-choice {
   width: 145px;
   height: auto;
-  transform: translate(-144%, 98%);
+  transform: translate(-100%, 98%);
   opacity: 0;
 }
 .status-container .screen.action-choice.inview {
@@ -724,7 +703,7 @@ body {
 .status-container .screen.ability {
   width: 50%;
   height: auto;
-  transform: translate(-121%, -103%);
+  transform: translate(-100%, -103%);
   opacity: 0;
 }
 .status-container .screen.ability.inview {
@@ -741,7 +720,11 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: white;
   background-color: black;
-  transform: translate(0%, -47%);
+  transform: translate(0%, 11px);
+}
+table.transform {
+  transition: all 0.5s;
+  transform: translate(0%, -48px);
 }
 table th {
   border: 3px solid white;

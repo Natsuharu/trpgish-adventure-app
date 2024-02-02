@@ -4,7 +4,6 @@
 .status-container {
   margin-left: auto;
   margin-right: auto;
-  // margin-top: 6%;
 
   @include mq(pc) {
     width: 31.3rem;
@@ -15,7 +14,7 @@
 
   &.transform {
     transition: all 0.5s;
-    transform: translate(0%, 0%);
+    // transform: translate(0%, 0%);
   }
 
   & .screen {
@@ -37,7 +36,7 @@
     }
 
     &.condition {
-      transform: translate(-123%, -27%);
+      transform: translate(-100%, -27%);
 
       @include mq(pc) {
         width: 14rem;
@@ -56,7 +55,7 @@
     &.enemy {
       width: 34%;
       height: auto;
-      transform: translate(278%, 171%);
+      transform: translate(294%, 244%);
       opacity: 0;
 
       &.inview {
@@ -67,7 +66,7 @@
     &.action-choice {
       width: 145px;
       height: auto;
-      transform: translate(-144%, 98%);
+      transform: translate(-100%, 98%);
       opacity: 0;
 
       &.inview {
@@ -104,7 +103,7 @@
     &.ability {
       width: 50%;
       height: auto;
-      transform: translate(-121%, -103%);
+      transform: translate(-100%, -103%);
       opacity: 0;
 
       &.inview {
@@ -125,7 +124,12 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: $cWhite;
   background-color: $cBlack;
-  transform: translate(0%, -47%);
+  transform: translate(0%, 11px);
+
+  &.transform {
+    transition: all 0.5s;
+    transform: translate(0%, -48px);
+  }
 
   & th {
     border: 3px solid $cWhite;

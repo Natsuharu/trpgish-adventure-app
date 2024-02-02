@@ -8,12 +8,12 @@
   border: 3px solid $cWhite;
 
   &.name {
-    transform: translate(-9%, 14%);
+    transform: translate(-30%, 485%);
     padding: 1%;
 
     & .text {
       &.transform {
-        transform: translate(10px, 15px);
+        transform: translate(0%, 28%);
       }
     }
   }
@@ -57,7 +57,7 @@
 
   &.transform {
     transition: all 0.5s;
-    transform: translate(0%, -31%);
+    transform: translate(0%, 426%);
     width: 100%;
   }
 }

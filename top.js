@@ -256,6 +256,7 @@ startBtn.addEventListener("click", function () {
     transform(".character-img");
     transform(".back-img");
     transform(".back-img2");
+    transform(".status");
 
     changeHTML(".character-name", job.hero.name);
     changeHTML(".text", texts.encounter.text);
