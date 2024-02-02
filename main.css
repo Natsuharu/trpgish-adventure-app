@@ -252,10 +252,9 @@ button.btn.hide {
 }
 .text-box.name {
   transform: translate(-30%, 485%);
-  padding: 1%;
 }
 .text-box.name .text.transform {
-  transform: translate(0%, 28%);
+  transform: translate(0%, 520%);
 }
 .text-box > p {
   font-family: "DotGothic16", sans-serif;
@@ -462,27 +461,27 @@ button.btn.hide {
 }
 @keyframes kf-hero-death {
   0% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 1;
   }
   10% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 0;
   }
   20% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 1;
   }
   30% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 0;
   }
   40% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 1;
   }
   100% {
-    transform: translate(-83%, -13%);
+    transform: translate(-67%, -37%);
     opacity: 0;
   }
 }
