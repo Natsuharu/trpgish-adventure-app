@@ -254,7 +254,7 @@ button.btn.hide {
   transform: translate(-30%, 368px);
 }
 .text-box.name .text.transform {
-  transform: translate(0%, 25%);
+  transform: translate(0%, 40%);
 }
 .text-box > p {
   font-family: "DotGothic16", sans-serif;
