@@ -363,7 +363,7 @@ button.btn.hide {
 }
 .text-box.transform {
   transition: all 0.5s;
-  transform: translate(0%, 521%);
+  transform: translate(0%, 516%);
   width: 100%;
 }
 
