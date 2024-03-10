@@ -5,16 +5,15 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include mq(pc) {
-    width: 31.3rem;
-  }
-  @include mq(tab) {
-    width: 42.6rem;
-  }
+  // @include mq(pc) {
+  //   width: 31.3rem;
+  // }
+  // @include mq(tab) {
+  //   width: 42.6rem;
+  // }
 
   &.transform {
     transition: all 0.5s;
-    // transform: translate(0%, 0%);
   }
 
   & .screen {
@@ -43,13 +42,16 @@
         height: 7.5rem;
       }
       @include mq(tab) {
-        height: 9rem;
-        width: 20rem;
+        // height: 9rem;
+        height: 7rem;
+        width: 18rem;
+        transform: translate(-43%, -28%);
+        // transform: translate(-56%, -27%);
       }
-      @include mq(sp) {
-        width: 39rem;
-        height: 30rem;
-      }
+      // @include mq(sp) {
+      //   width: 39rem;
+      //   height: 30rem;
+      // }
     }
 
     &.enemy {
@@ -57,6 +59,11 @@
       height: auto;
       transform: translate(294%, 244%);
       opacity: 0;
+
+      @include mq(tab) {
+        width: 27%;
+        transform: translate(322%, 244%);
+      }
 
       &.inview {
         opacity: 1;
@@ -106,6 +113,11 @@
       transform: translate(-100%, -103%);
       opacity: 0;
 
+      @include mq(tab) {
+        width: 28%;
+        transform: translate(-57%, -103%);
+      }
+
       &.inview {
         opacity: 1;
       }
@@ -129,6 +141,11 @@ table {
   &.transform {
     transition: all 0.5s;
     transform: translate(0%, -48px);
+
+    @include mq(tab) {
+      // transform: translate(17%, 0%);
+      transform: translate(18%, -46px);
+    }
   }
 
   & th {
