@@ -37,7 +37,7 @@
       @include mq(tab) {
         height: 7rem;
         width: 11rem;
-        transform: translate(-102%, -29%);
+        transform: translate(-102%, -51%);
       }
       // @include mq(sp) {
       //   width: 39rem;
@@ -105,7 +105,7 @@
       opacity: 0;
 
       @include mq(tab) {
-        width: 37%;
+        width: 42%;
         transform: translate(-101%, -103%);
       }
 
@@ -129,16 +129,12 @@ table {
   background-color: $cBlack;
   transform: translate(0%, 0px);
 
-  // @include mq(tab) {
-  //   transform: translate(0%, 0px);
-  // }
-
   &.transform {
     transition: all 0.5s;
     transform: translate(0%, -48px);
 
     @include mq(tab) {
-      transform: translate(0%, -75px);
+      transform: translate(0%, -154px);
     }
   }
 

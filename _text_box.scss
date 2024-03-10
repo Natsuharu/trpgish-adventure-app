@@ -58,6 +58,10 @@
     transition: all 0.5s;
     transform: translate(0%, 516%);
     width: 100%;
+
+    @include mq(tab) {
+      transform: translate(0%, 476%);
+    }
   }
 }
 

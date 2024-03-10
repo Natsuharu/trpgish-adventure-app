@@ -366,6 +366,11 @@ button.btn.hide {
   transform: translate(0%, 516%);
   width: 100%;
 }
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .text-box.transform {
+    transform: translate(0%, 476%);
+  }
+}
 
 @keyframes kf-chars-animate {
   0% {
@@ -643,7 +648,7 @@ body {
   .status-container .screen.condition {
     height: 7rem;
     width: 11rem;
-    transform: translate(-102%, -29%);
+    transform: translate(-102%, -51%);
   }
 }
 .status-container .screen.enemy {
@@ -697,7 +702,7 @@ body {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.ability {
-    width: 37%;
+    width: 42%;
     transform: translate(-101%, -103%);
   }
 }
@@ -723,7 +728,7 @@ table.transform {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   table.transform {
-    transform: translate(0%, -75px);
+    transform: translate(0%, -154px);
   }
 }
 table th {
