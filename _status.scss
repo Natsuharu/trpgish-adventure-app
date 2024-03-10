@@ -129,9 +129,9 @@ table {
   background-color: $cBlack;
   transform: translate(0%, 0px);
 
-  @include mq(tab) {
-    transform: translate(0%, -40px);
-  }
+  // @include mq(tab) {
+  //   transform: translate(0%, 0px);
+  // }
 
   &.transform {
     transition: all 0.5s;
