@@ -6,8 +6,7 @@ html {
     font-size: 62.5%;
   }
   @include mq(tab) {
-    // font-size: 75%;
-    font-size: 119%;
+    font-size: 132%;
   }
   @include mq(pc) {
     font-size: 120%;
@@ -31,7 +30,7 @@ body {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    padding: 2rem;
+    // padding: 2rem;
   }
 }
 
@@ -45,19 +44,6 @@ body {
   width: 600px;
   height: 360px;
 }
-
-// @include mq(pc) {
-//   width: 600px;
-//   height: 360px;
-// }
-// @include mq(tab) {
-//   height: 39rem;
-//   width: 55rem;
-// }
-// @include mq(sp) {
-//   width: 39rem;
-//   height: 30rem;
-// }
 
 .img-wrapper {
   overflow: hidden;

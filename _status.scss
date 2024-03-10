@@ -35,13 +35,9 @@
         height: 7.5rem;
       }
       @include mq(tab) {
-        // height: 9rem;
         height: 7rem;
-        // width: 18rem;
-        width: 15rem;
-        transform: translate(-67%, -118%);
-        // transform: translate(-43%, -28%);
-        // transform: translate(-56%, -27%);
+        width: 11rem;
+        transform: translate(-102%, -29%);
       }
       // @include mq(sp) {
       //   width: 39rem;
@@ -57,7 +53,7 @@
 
       @include mq(tab) {
         width: 27%;
-        transform: translate(322%, 244%);
+        transform: translate(374%, 222%);
       }
 
       &.inview {
@@ -109,8 +105,8 @@
       opacity: 0;
 
       @include mq(tab) {
-        width: 28%;
-        transform: translate(-57%, -103%);
+        width: 37%;
+        transform: translate(-101%, -103%);
       }
 
       &.inview {
@@ -131,7 +127,7 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: $cWhite;
   background-color: $cBlack;
-  transform: translate(0%, 11px);
+  transform: translate(0%, 0px);
 
   @include mq(tab) {
     transform: translate(0%, -40px);
@@ -142,8 +138,7 @@ table {
     transform: translate(0%, -48px);
 
     @include mq(tab) {
-      // transform: translate(17%, 0%);
-      transform: translate(18%, -46px);
+      transform: translate(0%, -75px);
     }
   }
 

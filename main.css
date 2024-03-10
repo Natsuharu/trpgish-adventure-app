@@ -512,7 +512,7 @@ button.btn.hide {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   html {
-    font-size: 119%;
+    font-size: 132%;
   }
 }
 @media screen and (min-width: 1281px) {
@@ -538,7 +538,6 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  padding: 2rem;
 }
 
 .main-wrapper {
@@ -643,8 +642,8 @@ body {
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.condition {
     height: 7rem;
-    width: 15rem;
-    transform: translate(-67%, -118%);
+    width: 11rem;
+    transform: translate(-102%, -29%);
   }
 }
 .status-container .screen.enemy {
@@ -656,7 +655,7 @@ body {
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.enemy {
     width: 27%;
-    transform: translate(322%, 244%);
+    transform: translate(374%, 222%);
   }
 }
 .status-container .screen.enemy.inview {
@@ -698,8 +697,8 @@ body {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.ability {
-    width: 28%;
-    transform: translate(-57%, -103%);
+    width: 37%;
+    transform: translate(-101%, -103%);
   }
 }
 .status-container .screen.ability.inview {
@@ -716,7 +715,7 @@ table {
   font-family: "DotGothic16", sans-serif;
   color: white;
   background-color: black;
-  transform: translate(0%, 11px);
+  transform: translate(0%, 0px);
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   table {
@@ -729,7 +728,7 @@ table.transform {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   table.transform {
-    transform: translate(18%, -46px);
+    transform: translate(0%, -75px);
   }
 }
 table th {
