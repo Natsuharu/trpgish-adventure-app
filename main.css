@@ -512,7 +512,7 @@ button.btn.hide {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   html {
-    font-size: 75%;
+    font-size: 119%;
   }
 }
 @media screen and (min-width: 1281px) {
@@ -612,16 +612,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 1281px) {
-  .status-container {
-    width: 31.3rem;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1280px) {
-  .status-container {
-    width: 42.6rem;
-  }
-}
 .status-container.transform {
   transition: all 0.5s;
 }
@@ -652,14 +642,9 @@ body {
 }
 @media screen and (min-width: 769px) and (max-width: 1280px) {
   .status-container .screen.condition {
-    height: 9rem;
-    width: 20rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .status-container .screen.condition {
-    width: 39rem;
-    height: 30rem;
+    height: 7rem;
+    width: 18rem;
+    transform: translate(-43%, -28%);
   }
 }
 .status-container .screen.enemy {
@@ -667,6 +652,12 @@ body {
   height: auto;
   transform: translate(294%, 244%);
   opacity: 0;
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .status-container .screen.enemy {
+    width: 27%;
+    transform: translate(322%, 244%);
+  }
 }
 .status-container .screen.enemy.inview {
   opacity: 1;
@@ -705,6 +696,12 @@ body {
   transform: translate(-100%, -103%);
   opacity: 0;
 }
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .status-container .screen.ability {
+    width: 28%;
+    transform: translate(-57%, -103%);
+  }
+}
 .status-container .screen.ability.inview {
   opacity: 1;
 }
@@ -724,6 +721,11 @@ table {
 table.transform {
   transition: all 0.5s;
   transform: translate(0%, -48px);
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  table.transform {
+    transform: translate(18%, -46px);
+  }
 }
 table th {
   border: 3px solid white;
