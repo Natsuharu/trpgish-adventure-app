@@ -5,13 +5,6 @@
   margin-left: auto;
   margin-right: auto;
 
-  // @include mq(pc) {
-  //   width: 31.3rem;
-  // }
-  // @include mq(tab) {
-  //   width: 42.6rem;
-  // }
-
   &.transform {
     transition: all 0.5s;
   }
@@ -44,8 +37,10 @@
       @include mq(tab) {
         // height: 9rem;
         height: 7rem;
-        width: 18rem;
-        transform: translate(-43%, -28%);
+        // width: 18rem;
+        width: 15rem;
+        transform: translate(-67%, -118%);
+        // transform: translate(-43%, -28%);
         // transform: translate(-56%, -27%);
       }
       // @include mq(sp) {
@@ -137,6 +132,10 @@ table {
   color: $cWhite;
   background-color: $cBlack;
   transform: translate(0%, 11px);
+
+  @include mq(tab) {
+    transform: translate(0%, -40px);
+  }
 
   &.transform {
     transition: all 0.5s;
