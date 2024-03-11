@@ -37,12 +37,8 @@
       @include mq(tab) {
         height: 7rem;
         width: 11rem;
-        transform: translate(-102%, -51%);
+        transform: translate(-102%, -31%);
       }
-      // @include mq(sp) {
-      //   width: 39rem;
-      //   height: 30rem;
-      // }
     }
 
     &.enemy {
@@ -134,7 +130,7 @@ table {
     transform: translate(0%, -48px);
 
     @include mq(tab) {
-      transform: translate(0%, -154px);
+      transform: translate(0%, -122px);
     }
   }
 
